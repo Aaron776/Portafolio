@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Aaron Ortiz</title>
+    <meta name="description"
+        content="Portafolio profesional de Aaron Ortiz, Desarrollador de Software con experiencia en PHP, Laravel, MySQL, PostgreSQL, HTML, CSS, JavaScript, Bootstrap, jQuery, Python y más.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#inicio">Portafolio</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#habilidades" class="nav-link">Habilidades</a>
+                <a href="#contacto" class="nav-contact-btn">Contacto</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-bg">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Hola, soy <span class="gradient-text">Aaron Ortiz</span>
+            </h1>
+            <p class="hero-subtitle">
+                Desarrollador de Software especializado en construir soluciones digitales modernas y eficientes
+            </p>
+            <div class="hero-buttons">
+                <a href="#proyectos" class="btn btn-primary">
+                    <span>👨‍💻</span> Ver Proyectos
+                </a>
+                <a href="#contacto" class="btn btn-secondary">
+                    <span>🔗</span> Conectar
+                </a>
+            </div>
+        </div>
+        <div class="floating-symbols">
+            <div class="symbol symbol-1">&lt;/&gt;</div>
+            <div class="symbol symbol-2">{ }</div>
+            <div class="symbol symbol-3">&lt;div&gt;</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="img/foto_perfil.jpg" alt="Perfil de Aaron Ortiz">
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">
+                        Sobre <span class="gradient-text">Mí</span>
+                    </h2>
+                    <div class="about-text">
+                        <p>Soy <strong>Aaron Ortiz</strong>, un desarrollador de software con 3 años de experiencia
+                            construyendo soluciones digitales. Manejo tecnologías como PHP, MySQL, PostgreSQL, Laravel,
+                            HTML, CSS, JavaScript, Bootstrap 5, jQuery, Git, GitHub, UI/UX Design y Python.</p>
+                        <p>He completado más de 6 proyectos que combinan código limpio, arquitectura escalable y diseño
+                            centrado en el usuario. Me apasiona crear aplicaciones que optimicen procesos y mejoren la
+                            experiencia digital.</p>
+                        <p>Mi objetivo es seguir creciendo como profesional y aportar valor a través de soluciones
+                            tecnológicas innovadoras.</p>
+                    </div>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">6+</div>
+                            <div class="stat-label">Proyectos Completados</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Años de Experiencia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Mis <span class="gradient-text">Proyectos</span>
+                </h2>
+                <p class="section-subtitle">
+                    Algunos de los sistemas que he desarrollado en los últimos años
+                </p>
+            </div>
+            <div class="projects-grid">
+                <!-- Proyecto 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/sistema_turnos.JPG" alt="Sistema de Turnos Médicos">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Turnos Médicos</h3>
+                        <p class="project-description">Aplicación para agendar y gestionar turnos en un centro médico,
+                            optimizando la atención y reduciendo tiempos de espera.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/Aaron776/Sistema-Agendar-Turnos.git" class="repo-btn"
+                                target="_blank">
+                                <i class="fab fa-github"></i>
+                                Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/sistema_gestion_incidentes.JPG" alt="Gestión de Incidentes Educativos">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Gestión de Incidentes Educativos</h3>
+                        <p class="project-description">Sistema para registrar, gestionar y dar seguimiento a incidentes
+                            en instituciones educativas con reportes detallados.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/Aaron776/Sistema_Gestion_Incidentes_Educativos.git" class="repo-btn" target="_blank">
+                                <i class="fab fa-github"></i>
+                                Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/sistema_asistencia.JPG" alt="Sistema de Asistencias">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Asistencias</h3>
+                        <p class="project-description">Plataforma para controlar la asistencia de personal o
+                            estudiantes, con reportes automáticos y estadísticas.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">jQuery</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/Aaron776/Sistema_Asistencias.git" class="repo-btn"
+                                target="_blank">
+                                <i class="fab fa-github"></i>
+                                Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/sistema_peluqueria.JPG" alt="Sistema de Citas Peluquería">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Citas Peluquería</h3>
+                        <p class="project-description">Aplicación para reservar citas en un salón de belleza, con
+                            gestión de horarios y notificaciones.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/Aaron776/Sistemas_Reservas_Peluqueria.git" class="repo-btn" target="_blank">
+                                <i class="fab fa-github"></i>
+                                Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Mis <span class="gradient-text">Habilidades</span>
+                </h2>
+                <p class="section-subtitle">
+                    Tecnologías y herramientas que domino para crear soluciones digitales completas
+                </p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">👨‍💻</div>
+                    <h3 class="skill-title">Backend Development</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">PHP</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Laravel</span>
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">API REST</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">🖼️</div>
+                    <h3 class="skill-title">Frontend Development</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">HTML5</span>
+                        <span class="skill-item">CSS3</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">Bootstrap</span>
+                        <span class="skill-item">Tailwind CSS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">🎨</div>
+                    <h3 class="skill-title">Design & UX</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">UI/UX Design</span>
+                        <span class="skill-item">Responsive Design</span>
+                        <span class="skill-item">Prototyping</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">🔧</div>
+                    <h3 class="skill-title">Tools & Others</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">GitHub</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Barras de progreso -->
+            <div class="progress-section">
+                <h3 class="progress-title">Nivel de Experiencia</h3>
+                <div class="progress-grid">
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>JavaScript</span>
+                            <span class="progress-percent">40%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="40"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>PHP</span>
+                            <span class="progress-percent">70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="70"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>Laravel</span>
+                            <span class="progress-percent">50%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="50"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>Database Design</span>
+                            <span class="progress-percent">85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>UI/UX Design</span>
+                            <span class="progress-percent">75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="75"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>Python</span>
+                            <span class="progress-percent">50%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="50"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>HTML & CSS</span>
+                            <span class="progress-percent">60%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="60"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section (sin formulario, solo info) -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Información de <span class="gradient-text">Contacto</span>
+                </h2>
+                <p class="section-subtitle">
+                    Si deseas ponerte en contacto conmigo, aquí tienes mis datos:
+                </p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value">aronortiz90@yahoo.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <div class="contact-label">Teléfono</div>
+                            <div class="contact-value">+593 98 458 8833</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <div class="contact-label">Ubicación</div>
+                            <div class="contact-value">Quito, Ecuador</div>
+                        </div>
+                    </div>
+                    <div class="social-section">
+                        <h3 class="social-title">Conecta Conmigo</h3>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/aron.ldf?locale=es_LA" class="social-link"
+                                title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/aronortiz88/" class="social-link" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/aaron-ortiz-alban-409632243/" class="social-link"
+                                title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/Aaron776" class="social-link" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (ajustado a nuevo contacto) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title gradient-text">Aaron Ortiz</h3>
+                    <p class="footer-text">
+                        Desarrollador de software especializado en soluciones modernas con PHP, Laravel, PostgreSQL,
+                        MySQL, JavaScript y más.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre-mi">Sobre Mí</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#habilidades">Habilidades</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Conecta Conmigo</h4>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/aron.ldf?locale=es_LA" class="footer-social-link"
+                            title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aronortiz88/" class="footer-social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/aaron-ortiz-alban-409632243/" class="footer-social-link"
+                            title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Aaron776" class="footer-social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Aaron Ortiz. Desarrollado con ❤️ y mucho código.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
