@@ -983,6 +983,51 @@ body {
     margin-bottom: 0.25rem;
 }
 
+/* Estilos para los logos de tecnologías */
+.tech-logo-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tech-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: grayscale(0.3);
+    transition: filter 0.3s ease;
+}
+
+.progress-item:hover .tech-logo {
+    filter: grayscale(0);
+}
+
+/* Ajuste para el header de las barras de progreso */
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .tech-logo {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .progress-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .progress-percent {
+        align-self: flex-end;
+    }
+}
+
 .contact-value {
     color: #6b7280;
     font-size: 1.1rem;
@@ -1261,3 +1306,4 @@ body {
         font-size: 0.9rem;
     }
 }
+
