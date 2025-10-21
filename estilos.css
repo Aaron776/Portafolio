@@ -1307,3 +1307,199 @@ body {
     }
 }
 
+/* Estilos para el botón de descarga de CV */
+.btn-cv {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.btn-cv:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+}
+
+/* Estilos para la sección de acciones en "Sobre Mí" */
+.about-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para el botón de CV en la sección de contacto */
+.contact-cv {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Ajustes para los botones en móviles */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .about-actions {
+        justify-content: center;
+    }
+}
+
+/* Experience Section - Estilo Simple */
+.experience {
+    padding: 5rem 0;
+    background: white;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.experience-card {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.experience-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.experience-icon {
+    width: 60px;
+    height: 60px;
+    background: #3b82f6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.experience-title-content {
+    flex: 1;
+}
+
+.experience-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.company {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.period {
+    background: #e2e8f0;
+    color: #475569;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.experience-content {
+    margin-top: 1.5rem;
+}
+
+.experience-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.experience-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.experience-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.experience-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.tech-tag {
+    background: #3b82f6;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .experience {
+        padding: 3rem 0;
+    }
+    
+    .experience-card {
+        padding: 2rem;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .experience-icon {
+        margin: 0 auto;
+    }
+    
+    .experience-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-card {
+        padding: 1.5rem;
+    }
+    
+    .experience-tech {
+        justify-content: center;
+    }
+}
+
+
+

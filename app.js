@@ -147,3 +147,4 @@ window.addEventListener('scroll', throttle(() => {
     
     animateOnScroll();
 }, 16));
+
