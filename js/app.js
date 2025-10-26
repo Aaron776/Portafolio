@@ -1,5 +1,14 @@
-// app.js - Versión con Anime.js
+// app.js - Versión corregida para las barras de progreso
 document.addEventListener("DOMContentLoaded", function () {
+  // Función específica para inicializar las barras de progreso
+  function initProgressBars() {
+    // Inicializar todas las barras con width 0%
+    document.querySelectorAll(".progress-fill").forEach(bar => {
+      bar.style.width = "0%";
+    });
+    console.log("Barras de progreso inicializadas:", document.querySelectorAll(".progress-fill").length);
+  }
+
   // Animación inicial de carga
   function initPageLoadAnimations() {
     // Animación del navbar
@@ -77,10 +86,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Animaciones al hacer scroll
+  // Animaciones al hacer scroll - VERSIÓN CORREGIDA
   function initScrollAnimations() {
     const observerOptions = {
-      threshold: 0.1,
+      threshold: 0.2, // Aumentado para mejor detección
       rootMargin: "0px 0px -50px 0px",
     };
 
@@ -134,14 +143,36 @@ document.addEventListener("DOMContentLoaded", function () {
               delay: anime.stagger(100),
             });
           } else if (element.classList.contains("progress-item")) {
+            // ANIMACIÓN CORREGIDA PARA BARRAS DE PROGRESO
+            const progressFill = element.querySelector(".progress-fill");
+            if (progressFill) {
+              const targetWidth = progressFill.getAttribute("data-width") + "%";
+              anime({
+                targets: progressFill,
+                width: targetWidth,
+                duration: 1800,
+                easing: "easeOutQuart",
+                delay: 300
+              });
+            }
+            
+            // También animar el item completo
             anime({
-              targets: element.querySelector(".progress-fill"),
-              width: function (el) {
-                return el.getAttribute("data-width") + "%";
-              },
-              duration: 1500,
+              targets: element,
+              translateY: [30, 0],
+              opacity: [0, 1],
+              duration: 800,
+              easing: "easeOutCubic",
+            });
+          } else if (element.classList.contains("progress-fill")) {
+            // Animación directa para las barras (backup)
+            const targetWidth = element.getAttribute("data-width") + "%";
+            anime({
+              targets: element,
+              width: targetWidth,
+              duration: 1800,
               easing: "easeOutQuart",
-              delay: anime.stagger(100),
+              delay: 300
             });
           } else if (
             element.classList.contains("contact-info") ||
@@ -178,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }, observerOptions);
 
-    // Observar elementos para animaciones
+    // Observar elementos para animaciones - LISTA ACTUALIZADA
     const elementsToAnimate = [
       ".about-image",
       ".about-content",
@@ -186,6 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ".project-card",
       ".skill-category",
       ".progress-item",
+      ".progress-fill", // AÑADIDO ESPECÍFICAMENTE
       ".contact-info",
       ".contact-form",
       ".section-title",
@@ -193,7 +225,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     elementsToAnimate.forEach((selector) => {
-      document.querySelectorAll(selector).forEach((el) => {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach((el) => {
         observer.observe(el);
       });
     });
@@ -202,6 +235,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Animación de partículas en el hero
   function initParticles() {
     const heroSection = document.querySelector(".hero");
+    if (!heroSection) return;
+
     const particlesContainer = document.createElement("div");
     particlesContainer.className = "particles-container";
     particlesContainer.style.cssText = `
@@ -339,6 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Animación del navbar al hacer scroll
   function initNavbarAnimation() {
     const navbar = document.getElementById("navbar");
+    if (!navbar) return;
 
     window.addEventListener("scroll", function () {
       if (window.scrollY > 100) {
@@ -367,6 +403,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function initHamburgerMenu() {
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.getElementById("nav-menu");
+
+    if (!hamburger || !navMenu) return;
 
     hamburger.addEventListener("click", function () {
       this.classList.toggle("active");
@@ -402,43 +440,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Efecto de escritura en el título
-
+  // Efecto de escritura en el título - VERSIÓN SIMPLE
   function initTypewriterEffect() {
     const heroTitle = document.querySelector(".hero-title");
-    const originalHTML = heroTitle.innerHTML;
-
-    // Extraer solo el texto "Aaron Ortiz" para el efecto
-    const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = originalHTML;
-    const gradientText = tempDiv.querySelector(".gradient-text");
-    const textToType = gradientText ? gradientText.textContent : "Aaron Ortiz";
-
-    // Reemplazar con span vacío para el efecto
-    heroTitle.innerHTML = originalHTML.replace(
-      "Aaron Ortiz",
-      '<span class="gradient-text typewriter-text"></span>'
-    );
-
-    const typewriterText = document.querySelector(".typewriter-text");
-
-    // Usar textContent en lugar de innerHTML para evitar problemas numéricos
-    let currentText = "";
-    let index = 0;
-
-    const typeInterval = setInterval(() => {
-      if (index < textToType.length) {
-        currentText += textToType.charAt(index);
-        typewriterText.textContent = currentText;
-        index++;
-      } else {
-        clearInterval(typeInterval);
-        // Remover el cursor después de terminar
-        setTimeout(() => {
-          typewriterText.style.borderRight = "none";
-        }, 500);
-      }
-    }, 100); // Velocidad de escritura
+    if (!heroTitle) return;
+    
+    // Solo aplicar una animación de fade in sin typewriter
+    anime({
+      targets: '.hero-title .gradient-text',
+      opacity: [0, 1],
+      translateY: [10, 0],
+      duration: 1500,
+      easing: 'easeOutCubic',
+      delay: 800
+    });
   }
 
   // Animación de carga inicial
@@ -575,6 +590,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Inicializar todas las animaciones
   function initAllAnimations() {
+    initProgressBars(); // INICIALIZAR BARRAS PRIMERO
     initPageLoader();
     initScrollAnimations();
     initParticles();
