@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Aaron Ortiz</title>
+    <meta name="description" content="Portafolio de proyectos de Aaron Ortiz, Desarrollador de Software con experiencia en PHP, Laravel, MySQL, PostgreSQL, HTML, CSS, JavaScript, Bootstrap, jQuery, Python y más.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Portafolio</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#inicio" class="nav-link">Inicio</a>
+                <a href="index.html#sobre-mi" class="nav-link">Sobre Mí</a>
+                <a href="index.html#experiencia" class="nav-link">Experiencia</a>
+                <a href="index.html#proyectos" class="nav-link">Proyectos</a>
+                <a href="index.html#habilidades" class="nav-link">Habilidades</a>
+                <a href="index.html#contacto" class="nav-contact-btn">Contacto</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="projects" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Mis <span class="gradient-text">Proyectos</span>
+                </h2>
+                <p class="section-subtitle">
+                    Todos los sistemas y aplicaciones que he desarrollado
+                </p>
+            </div>
+
+            <!-- Buscador -->
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar proyectos por nombre, tecnología o descripción...">
+                    <button id="clearSearch" class="clear-search-btn" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Proyecto 1 -->
+                <div class="project-card" data-title="Sistema Web de Gestión Penitenciaria" data-tech="PHP PostgreSQL HTML CSS JavaScript PDO CSRF Auditoría" data-description="Sistema web penitenciario con control de accesos por roles, bitácora de auditoría y seguridad (CSRF, validaciones y consultas preparadas) para gestionar internos, visitas, conductas y fichas médicas.">
+                    <div class="project-image">
+                        <img src="img/sistema_penitenciario.jpg" alt="Sistema de Gestión Penitenciaria">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title"> Sistema Web de Gestión Penitenciaria</h3>
+                        <p class="project-description">Sistema web penitenciario con control de accesos por roles,
+                            bitácora de auditoría y seguridad (CSRF, validaciones y consultas preparadas) para gestionar
+                            internos, visitas, conductas y fichas médicas.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">PDO</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/Aaron776/Sistemas_Gestion_Penintenciaria" class="repo-btn"
+                                target="_blank">
+                                <i class="fab fa-github"></i>
+                                Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card" data-title="Sistema Web de Gestión para Gimnasios" data-tech="PHP MySQL POO PDO JavaScript HTML CSS DomPDF Roles" data-description="Sistema web para administrar gimnasios con roles (Administrador/Entrenador/Socio), membresías y pagos, control de asistencia y clases, y generación de recibos/reportes en PDF (DomPDF).">
+                    <div class="project-image">
+                        <img src="img/sistema_gimnasio.JPG" alt="Gestión de Incidentes Educativos">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema Web de Gestión para Gimnasios</h3>
+                        <p class="project-description">Sistema web para administrar gimnasios con roles (Administrador,
+                            Entrenador y Socio), gestión de membresías y pagos, control de asistencia y clases, y
+                            generación de recibos/reportes en PDF (DomPDF).</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">PDO</span>
+                            <span class="tech-tag">DomPDF</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/Aaron776/Sistema_Gestion_Gimnasio"
+                                class="repo-btn" target="_blank">
+                                <i class="fab fa-github"></i>
+                                Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensaje cuando no hay resultados -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No se encontraron proyectos</h3>
+                <p>Intenta buscar con otros términos o tecnologías</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title gradient-text">Aaron Ortiz</h3>
+                    <p class="footer-text">
+                        Desarrollador de software especializado en soluciones modernas con PHP, Laravel, PostgreSQL,
+                        MySQL, JavaScript y más.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#sobre-mi">Sobre Mí</a></li>
+                        <li><a href="proyectos.html">Proyectos</a></li>
+                        <li><a href="index.html#habilidades">Habilidades</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Conecta Conmigo</h4>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/aron.ldf?locale=es_LA" class="footer-social-link"
+                            title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aronortiz88/" class="footer-social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/aaron-ortiz-alban-409632243/" class="footer-social-link"
+                            title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Aaron776" class="footer-social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Aaron Ortiz. Desarrollado con ❤️ y mucho código.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Funcionalidad del buscador
+        const searchInput = document.getElementById('searchInput');
+        const clearSearchBtn = document.getElementById('clearSearch');
+        const projectsGrid = document.getElementById('projectsGrid');
+        const projectCards = document.querySelectorAll('.project-card');
+        const noResults = document.getElementById('noResults');
+
+        // Función de búsqueda
+        function searchProjects() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            projectCards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                const tech = card.getAttribute('data-tech').toLowerCase();
+                const description = card.getAttribute('data-description').toLowerCase();
+                
+                const matches = title.includes(searchTerm) || 
+                              tech.includes(searchTerm) || 
+                              description.includes(searchTerm);
+
+                if (matches || searchTerm === '') {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Mostrar/ocultar mensaje de no resultados
+            if (visibleCount === 0 && searchTerm !== '') {
+                noResults.style.display = 'block';
+                projectsGrid.style.display = 'none';
+            } else {
+                noResults.style.display = 'none';
+                projectsGrid.style.display = 'grid';
+            }
+
+            // Mostrar/ocultar botón de limpiar búsqueda
+            if (searchTerm !== '') {
+                clearSearchBtn.style.display = 'block';
+            } else {
+                clearSearchBtn.style.display = 'none';
+            }
+        }
+
+        // Event listeners
+        searchInput.addEventListener('input', searchProjects);
+        searchInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+                searchProjects();
+            }
+        });
+
+        clearSearchBtn.addEventListener('click', function() {
+            searchInput.value = '';
+            searchProjects();
+            searchInput.focus();
+        });
+
+        // Animación al cargar
+        window.addEventListener('load', function() {
+            projectCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+
+</html>
