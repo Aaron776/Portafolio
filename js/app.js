@@ -517,6 +517,13 @@ document.addEventListener("DOMContentLoaded", function () {
       contactForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
+        // Verificación de Honeypot (Anti-spam)
+        const honeypot = document.getElementById("honeypot");
+        if (honeypot && honeypot.value !== "") {
+          console.log("Bot detectado por Honeypot.");
+          return; // Detiene el envío silenciosamente
+        }
+
         // Animación de envío
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
