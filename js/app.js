@@ -1,4 +1,4 @@
-// app.js — Sala de Control · tilt 3D, telemetría, reveals
+// app.js — Estudio de Sistemas · planos 3D, tilt, parallax, reveals
 (function () {
   "use strict";
 
@@ -51,53 +51,91 @@
     });
   }
 
-  /* ---------- Entrada del hero (un solo momento autorizado) ---------- */
+  /* ---------- Entrada del hero ---------- */
   function initHeroEntrance() {
     if (reduceMotion) return;
     var title = document.querySelector(".hero-title");
     var subtitle = document.querySelector(".hero-subtitle");
     var buttons = document.querySelector(".hero-buttons");
-    var radar = document.querySelector(".radar");
+    var stage = document.getElementById("hero-stage");
 
     if (window.anime) {
       if (title) {
-        anime({ targets: title, translateY: [26, 0], opacity: [0, 1], duration: 800, easing: "easeOutCubic", delay: 120 });
+        anime({ targets: title, translateY: [30, 0], opacity: [0, 1], duration: 820, easing: "easeOutCubic", delay: 120 });
       }
       if (subtitle) {
-        anime({ targets: subtitle, translateY: [22, 0], opacity: [0, 1], duration: 800, easing: "easeOutCubic", delay: 280 });
+        anime({ targets: subtitle, translateY: [24, 0], opacity: [0, 1], duration: 820, easing: "easeOutCubic", delay: 260 });
       }
       if (buttons) {
-        anime({ targets: buttons, translateY: [18, 0], opacity: [0, 1], duration: 800, easing: "easeOutCubic", delay: 440 });
+        anime({ targets: buttons, translateY: [18, 0], opacity: [0, 1], duration: 820, easing: "easeOutCubic", delay: 400 });
       }
-      if (radar) {
-        anime({ targets: radar, scale: [0.94, 1], opacity: [0, 1], duration: 900, easing: "easeOutCubic", delay: 340 });
+      if (stage) {
+        var planes = stage.querySelectorAll(".plane");
+        planes.forEach(function (plane, i) {
+          var card = plane.querySelector(".plane-card");
+          if (card) {
+            anime({
+              targets: card,
+              translateY: [26, 0],
+              scale: [0.88, 1],
+              duration: 950,
+              easing: "easeOutCubic",
+              delay: 300 + i * 120
+            });
+          }
+          anime({
+            targets: plane,
+            opacity: [0, 1],
+            duration: 950,
+            easing: "linear",
+            delay: 300 + i * 120
+          });
+        });
+        var shadow = stage.querySelector(".plane-shadow");
+        anime({ targets: shadow, opacity: [0, 1], duration: 1000, delay: 700 });
       }
     }
   }
 
-  /* ---------- Parallax por capas del hero ---------- */
-  function initHeroParallax() {
+  /* ---------- Escena hero: tilt + parallax de planos ---------- */
+  function initHeroScene() {
     var stage = document.getElementById("hero-stage");
-    var hero = document.querySelector(".hero");
-    if (!stage || !hero || reduceMotion || !hasFinePointer) return;
+    var scene = document.getElementById("plane-scene");
+    if (!stage || !scene || reduceMotion) return;
 
-    var layers = stage.querySelectorAll(".layer");
+    var planes = Array.prototype.slice.call(stage.querySelectorAll(".plane"));
     var raf = null;
     var tx = 0;
     var ty = 0;
 
-    hero.addEventListener("pointermove", function (e) {
-      var r = hero.getBoundingClientRect();
-      tx = (e.clientX - r.left - r.width / 2) / r.width; // -0.5..0.5
+    function paint() {
+      var rx = -ty * 7;
+      var ry = tx * 9;
+      scene.style.setProperty("--rx", rx.toFixed(2) + "deg");
+      scene.style.setProperty("--ry", ry.toFixed(2) + "deg");
+      planes.forEach(function (plane) {
+        var depth = parseFloat(plane.getAttribute("data-depth") || "0.8");
+        var rot = getComputedStyle(plane).getPropertyValue("--rot") || "0deg";
+        plane.style.transform =
+          "translate3d(" + (tx * depth * 22).toFixed(1) + "px, " + (ty * depth * 14).toFixed(1) + "px, 0) rotate(" + rot.trim() + ")";
+      });
+      raf = null;
+    }
+
+    stage.addEventListener("pointermove", function (e) {
+      var r = stage.getBoundingClientRect();
+      tx = (e.clientX - r.left - r.width / 2) / r.width;
       ty = (e.clientY - r.top - r.height / 2) / r.height;
       if (!raf) {
-        raf = requestAnimationFrame(function () {
-          layers.forEach(function (layer) {
-            var depth = parseFloat(layer.getAttribute("data-depth") || "0.3");
-            layer.style.transform = "translate3d(" + tx * depth * 46 + "px, " + ty * depth * 34 + "px, 0)";
-          });
-          raf = null;
-        });
+        raf = requestAnimationFrame(paint);
+      }
+    });
+
+    stage.addEventListener("pointerleave", function () {
+      tx = 0;
+      ty = 0;
+      if (!raf) {
+        raf = requestAnimationFrame(paint);
       }
     });
   }
@@ -112,8 +150,8 @@
       var r = el.getBoundingClientRect();
       var px = (e.clientX - r.left) / r.width;
       var py = (e.clientY - r.top) / r.height;
-      var rx = (0.5 - py) * 9;
-      var ry = (px - 0.5) * 11;
+      var rx = (0.5 - py) * 8;
+      var ry = (px - 0.5) * 10;
       el.style.setProperty("--rx", rx.toFixed(2) + "deg");
       el.style.setProperty("--ry", ry.toFixed(2) + "deg");
       el.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
@@ -121,7 +159,7 @@
     }
 
     panels.forEach(function (el) {
-      if (!hasFinePointer) return; // touch: sin tilt
+      if (!hasFinePointer) return;
       el.addEventListener("pointermove", function (e) { handleMove(e, el); });
       el.addEventListener("pointerleave", function () {
         el.style.setProperty("--rx", "0deg");
@@ -130,7 +168,7 @@
     });
   }
 
-  /* ---------- Conteo de telemetría ---------- */
+  /* ---------- Conteo ---------- */
   function initCountUp() {
     var counters = document.querySelectorAll("[data-count]");
     if (!counters.length) return;
@@ -164,9 +202,21 @@
     counters.forEach(function (el) { observer.observe(el); });
   }
 
-  /* ---------- Revelado por secciones + línea de scan ---------- */
+  /* ---------- Revelado por secciones + progreso ---------- */
   function initScrollReveal() {
+    var reveals = document.querySelectorAll(".reveal");
     var headers = document.querySelectorAll(".section-header");
+
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-in");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+    reveals.forEach(function (el) { revealObserver.observe(el); });
+
     var headerObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -174,34 +224,34 @@
           headerObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.35 });
-    headers.forEach(function (h) { headerObserver.observe(h); });
+    }, { threshold: 0.4 });
+    headers.forEach(function (el) { headerObserver.observe(el); });
 
     // Barras de progreso: crecen al entrar en pantalla
-    initProgressBars();
-
-    var progressObserver = new IntersectionObserver(function (entries) {
+    // Se observa la pista (no el relleno), porque el relleno con scaleX(0)
+    // tiene caja de ancho cero y nunca intersecta el observer.
+    var trackObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var bar = entry.target;
-          if (bar.dataset.done) return;
-          bar.dataset.done = "1";
-          var w = parseFloat(bar.getAttribute("data-width") || "0");
-          if (reduceMotion) {
-            bar.style.transform = "scaleX(" + w / 100 + ")";
-          } else {
-            requestAnimationFrame(function () { bar.style.transform = "scaleX(" + w / 100 + ")"; });
-          }
-          progressObserver.unobserve(bar);
+        if (!entry.isIntersecting) return;
+        var track = entry.target;
+        var bar = track.querySelector(".progress-fill");
+        if (!bar || bar.dataset.done) return;
+        bar.dataset.done = "1";
+        var w = parseFloat(bar.getAttribute("data-width") || "0");
+        if (reduceMotion) {
+          bar.style.transform = "scaleX(" + (w / 100).toFixed(3) + ")";
+        } else {
+          requestAnimationFrame(function () {
+            bar.style.transform = "scaleX(" + (w / 100).toFixed(3) + ")";
+          });
         }
+        trackObserver.unobserve(track);
       });
     }, { threshold: 0.5 });
-    document.querySelectorAll(".progress-fill").forEach(function (f) { progressObserver.observe(f); });
-  }
-
-  function initProgressBars() {
-    document.querySelectorAll(".progress-fill").forEach(function (bar) {
-      bar.style.transform = "scaleX(0)";
+    document.querySelectorAll(".progress-bar").forEach(function (track) {
+      var bar = track.querySelector(".progress-fill");
+      if (bar) bar.style.transform = "scaleX(0)";
+      trackObserver.observe(track);
     });
   }
 
@@ -218,7 +268,7 @@
         var ripple = document.createElement("span");
         ripple.style.cssText =
           "position:absolute;width:" + size + "px;height:" + size + "px;" +
-          "background:rgba(123,242,224,0.28);border-radius:50%;" +
+          "background:rgba(251,249,243,0.35);border-radius:50%;" +
           "left:" + x + "px;top:" + y + "px;transform:scale(0);pointer-events:none;";
         button.style.position = "relative";
         button.style.overflow = "hidden";
@@ -240,7 +290,7 @@
     initNavbar();
     initHamburger();
     initHeroEntrance();
-    initHeroParallax();
+    initHeroScene();
     initTilt3D();
     initCountUp();
     initScrollReveal();

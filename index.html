@@ -7,7 +7,7 @@
     <meta name="description" content="Portafolio profesional de Aaron Ortiz, Desarrollador de Software con experiencia en PHP, Laravel, MySQL, PostgreSQL, HTML, CSS, JavaScript, Bootstrap, jQuery, Python y más.">
     <!-- SEO & Social Media Meta Tags -->
     <meta name="author" content="Aaron Ortiz">
-    <meta name="theme-color" content="#05070F">
+    <meta name="theme-color" content="#F3EFE6">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/Aaron776">
     <meta property="og:title" content="Portafolio - Aaron Ortiz | Desarrollador de Software">
@@ -22,48 +22,43 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700&family=Archivo:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Familjen+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 
 <body>
-    <!-- Background chrome -->
-    <div class="chrome-grid" aria-hidden="true"></div>
-    <div class="scanline" aria-hidden="true"></div>
+    <!-- Estudio: fondo de luz -->
+    <div class="studio-wash" aria-hidden="true"></div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a class="nav-logo" href="#inicio">
-                <span class="lamp" aria-hidden="true"></span>
-                <span class="nav-logo-name">AARON.<strong>ORTIZ</strong></span>
-            </a>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#inicio" class="nav-link">Inicio</a>
-                <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
-                <a href="#experiencia" class="nav-link">Experiencia</a>
-                <a href="#proyectos" class="nav-link">Proyectos</a>
-                <a href="#habilidades" class="nav-link">Habilidades</a>
-                <a href="#contacto" class="nav-contact-btn">Contacto</a>
+        <div class="container">
+            <div class="nav-shell">
+                <a class="nav-logo" href="#inicio">
+                    <span class="nav-mark" aria-hidden="true"></span>
+                    <span class="nav-logo-name"><strong>AARON</strong> ORTIZ</span>
+                </a>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                    <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+                    <a href="#experiencia" class="nav-link">Experiencia</a>
+                    <a href="#proyectos" class="nav-link">Proyectos</a>
+                    <a href="#habilidades" class="nav-link">Habilidades</a>
+                    <a href="#contacto" class="nav-contact-btn">Contacto</a>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="hero-stage" id="hero-stage" aria-hidden="true">
-            <div class="layer starfield" data-depth="0.25"></div>
-            <div class="layer grid-floor" data-depth="0.45"></div>
-            <div class="layer ring-huge" data-depth="0.7"></div>
-        </div>
-
         <div class="hero-layout">
             <div class="hero-content">
                 <h1 class="hero-title">
@@ -77,7 +72,7 @@
                         <i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Ver Proyectos
                     </a>
                     <a href="#contacto" class="btn btn-secondary">
-                        <i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i> Conectar
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Conectar
                     </a>
                     <a href="docs/CURRICULUM-SOFTWARE.pdf" class="btn btn-cv" download="Aaron_Ortiz_CV.pdf">
                         <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Descargar CV
@@ -85,38 +80,63 @@
                 </div>
             </div>
 
-            <aside class="radar" aria-label="Telemetría: sistemas en línea">
-                <div class="radar-disc">
-                    <div class="radar-ring r1"></div>
-                    <div class="radar-ring r2"></div>
-                    <div class="radar-ring r3"></div>
-                    <div class="radar-sweep"></div>
-                    <span class="blip b1"></span>
-                    <span class="blip b2"></span>
-                    <span class="blip b3"></span>
-                    <span class="blip b4"></span>
-                    <span class="blip b5"></span>
-                    <span class="blip b6"></span>
+            <div class="hero-stage" id="hero-stage" aria-label="Sistemas exhibidos">
+                <div class="plane-shadow" aria-hidden="true"></div>
+                <div class="scene" id="plane-scene" aria-hidden="true">
+                    <div class="plane plane-back"></div>
+
+                    <div class="plane plane-chip" data-depth="1.5">
+                        <div class="plane-float">
+                            <div class="plane-card">
+                                <span class="dot" aria-hidden="true"></span>
+                                <span class="mono">SISTEMAS EN LÍNEA · 10 MÓDULOS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plane plane-photo" data-depth="1">
+                        <div class="plane-float">
+                            <div class="plane-card">
+                                <img src="img/foto_perfil.jpg" alt="Perfil de Aaron Ortiz">
+                                <span class="plane-tag">AARON ORTIZ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plane plane-plate" data-depth="1.25">
+                        <div class="plane-float">
+                            <div class="plane-card">
+                                <img src="img/sistema_gestion_carniceria.jpg" alt="Sistema de Gestión para Carnicería">
+                                <span class="plane-sys">SYS_01</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plane plane-frame" data-depth="0.8">
+                        <div class="plane-float">
+                            <div class="plane-card">
+                                <span class="mono"><strong>FULL STACK</strong><br>PHP · MYSQL · POSTGRESQL</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="radar-label">
-                    <span class="lamp lamp-live" aria-hidden="true"></span>
-                    SISTEMAS EN LÍNEA · 10 MÓDULOS
-                </div>
-            </aside>
+            </div>
         </div>
 
-        <div class="hero-readouts" aria-label="Indicadores">
-            <div class="readout">
-                <span class="readout-num" data-count="6" data-suffix="+">0+</span>
-                <span class="readout-label">Proyectos Completados</span>
-            </div>
-            <div class="readout">
-                <span class="readout-num" data-count="3" data-suffix="+">0+</span>
-                <span class="readout-label">Años de Experiencia</span>
-            </div>
-            <div class="readout">
-                <span class="readout-num readout-text">FULL STACK</span>
-                <span class="readout-label">PHP · MySQL · PostgreSQL</span>
+        <div class="hero-ledger reveal" aria-label="Indicadores">
+            <div class="ledger">
+                <div class="ledger-item">
+                    <span class="ledger-num" data-count="6" data-suffix="+">0+</span>
+                    <span class="ledger-text">Proyectos Completados</span>
+                </div>
+                <div class="ledger-item">
+                    <span class="ledger-num" data-count="3" data-suffix="+">0+</span>
+                    <span class="ledger-text">Años de Experiencia</span>
+                </div>
+                <div class="ledger-item">
+                    <span class="ledger-num ledger-live">FULL STACK</span>
+                    <span class="ledger-text">PHP · MySQL · PostgreSQL</span>
+                </div>
             </div>
         </div>
     </section>
@@ -124,16 +144,11 @@
     <!-- About Section -->
     <section id="sobre-mi" class="about section">
         <div class="container">
-            <div class="about-grid">
+            <div class="about-grid reveal">
                 <div class="about-image panel3d" data-tilt>
-                    <div class="panel-frame">
-                        <span class="corner c1"></span>
-                        <span class="corner c2"></span>
-                        <span class="corner c3"></span>
-                        <span class="corner c4"></span>
+                    <div class="photo-frame">
                         <div class="frame-top">
-                            <span class="lamp lamp-live" aria-hidden="true"></span>
-                            <span class="frame-title">PERFIL.SYS</span>
+                            <span class="frame-title">PERFIL · AARON ORTIZ</span>
                             <span class="frame-id">ID:ORT-001</span>
                         </div>
                         <img src="img/foto_perfil.jpg" alt="Perfil de Aaron Ortiz">
@@ -157,14 +172,14 @@
                         <p>Mi objetivo es seguir creciendo como profesional y aportar valor a través de soluciones
                             tecnológicas innovadoras.</p>
                     </div>
-                    <div class="stats">
+                    <div class="stats reveal">
                         <div class="stat" data-tilt>
-                            <span class="stat-kicker">TELEMETRÍA · 01</span>
+                            <span class="stat-kicker">Registro · 01</span>
                             <div class="stat-number" data-count="6" data-suffix="+">0+</div>
                             <div class="stat-label">Proyectos Completados</div>
                         </div>
                         <div class="stat" data-tilt>
-                            <span class="stat-kicker">TELEMETRÍA · 02</span>
+                            <span class="stat-kicker">Registro · 02</span>
                             <div class="stat-number" data-count="3" data-suffix="+">0+</div>
                             <div class="stat-label">Años de Experiencia</div>
                         </div>
@@ -186,7 +201,7 @@
                 </p>
             </div>
 
-            <div class="experience-grid">
+            <div class="experience-grid reveal">
                 <!-- Experiencia 1 -->
                 <div class="experience-card panel3d" data-tilt>
                     <div class="experience-header">
@@ -259,12 +274,11 @@
                     Algunos de los sistemas que he desarrollado en los últimos años
                 </p>
             </div>
-            <div class="projects-grid">
+            <div class="projects-grid reveal">
                 <!-- Proyecto 1: Carnicería -->
                 <article class="project-card panel3d" data-tilt>
                     <div class="project-image">
                         <img src="img/sistema_gestion_carniceria.jpg" alt="Sistema de Gestión para Carnicería" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Sistema+Carniceria'">
-                        <span class="screen-glare" aria-hidden="true"></span>
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_01</span>
@@ -290,7 +304,6 @@
                 <article class="project-card panel3d" data-tilt>
                     <div class="project-image">
                         <img src="img/sistema_gestion_veterinaria.jpg" alt="Sistema de Gestión para Clínica Veterinaria" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Sistema+Veterinaria'">
-                        <span class="screen-glare" aria-hidden="true"></span>
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_02</span>
@@ -316,7 +329,6 @@
                 <article class="project-card panel3d" data-tilt>
                     <div class="project-image">
                         <img src="img/sistema_gestion_parqueadero.jpg" alt="Sistema de Gestión de Parqueaderos" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Sistema+Parqueadero'">
-                        <span class="screen-glare" aria-hidden="true"></span>
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_03</span>
@@ -342,7 +354,6 @@
                 <article class="project-card panel3d" data-tilt>
                     <div class="project-image">
                         <img src="img/sistema_gestion_taller_mecanico.jpg" alt="Sistema de Gestión para Taller Mecánico" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Sistema+Taller+Mecanico'">
-                        <span class="screen-glare" aria-hidden="true"></span>
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_04</span>
@@ -385,7 +396,7 @@
                     Tecnologías y herramientas que domino para crear soluciones digitales completas
                 </p>
             </div>
-            <div class="skills-grid">
+            <div class="skills-grid reveal">
                 <div class="skill-category panel3d" data-tilt>
                     <div class="skill-icon">
                         <i class="fa-solid fa-server" aria-hidden="true"></i>
@@ -441,7 +452,7 @@
             </div>
 
             <!-- Barras de progreso -->
-            <div class="progress-section">
+            <div class="progress-section reveal">
                 <h3 class="progress-title">Nivel de Experiencia</h3>
                 <div class="progress-grid">
                     <div class="progress-item">
@@ -551,7 +562,7 @@
                 </p>
             </div>
 
-            <div class="contact-content">
+            <div class="contact-content reveal">
                 <!-- Información de contacto -->
                 <div class="contact-info panel3d" data-tilt>
                     <h3 class="panel-heading">Información de Contacto</h3>
@@ -608,7 +619,7 @@
                 <!-- Formulario de contacto -->
                 <div class="contact-form panel3d" data-tilt>
                     <h3 class="panel-heading">Envíame un Mensaje</h3>
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm">
                         <!-- Honeypot field (hidden from users) -->
                         <div style="display: none;">
                             <input type="text" name="honeypot" id="honeypot" tabindex="-1" autocomplete="off">

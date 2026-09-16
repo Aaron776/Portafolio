@@ -7,7 +7,7 @@
     <meta name="description" content="Portafolio de proyectos de Aaron Ortiz, Desarrollador de Software con experiencia en PHP, Laravel, MySQL, PostgreSQL, HTML, CSS, JavaScript, Bootstrap, jQuery, Python y más.">
     <!-- SEO & Social Media Meta Tags -->
     <meta name="author" content="Aaron Ortiz">
-    <meta name="theme-color" content="#05070F">
+    <meta name="theme-color" content="#F3EFE6">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/Aaron776">
     <meta property="og:title" content="Más Proyectos - Aaron Ortiz | Desarrollador de Software">
@@ -22,37 +22,38 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700&family=Archivo:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Familjen+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 
 <body>
-    <!-- Background chrome -->
-    <div class="chrome-grid" aria-hidden="true"></div>
-    <div class="scanline" aria-hidden="true"></div>
+    <!-- Estudio: fondo de luz -->
+    <div class="studio-wash" aria-hidden="true"></div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a class="nav-logo" href="index.html">
-                <span class="lamp" aria-hidden="true"></span>
-                <span class="nav-logo-name">AARON.<strong>ORTIZ</strong></span>
-            </a>
-            <div class="nav-menu" id="nav-menu">
-                <a href="index.html#inicio" class="nav-link">Inicio</a>
-                <a href="index.html#sobre-mi" class="nav-link">Sobre Mí</a>
-                <a href="index.html#experiencia" class="nav-link">Experiencia</a>
-                <a href="index.html#proyectos" class="nav-link">Proyectos</a>
-                <a href="index.html#habilidades" class="nav-link">Habilidades</a>
-                <a href="index.html#contacto" class="nav-contact-btn">Contacto</a>
+        <div class="container">
+            <div class="nav-shell">
+                <a class="nav-logo" href="index.html">
+                    <span class="nav-mark" aria-hidden="true"></span>
+                    <span class="nav-logo-name"><strong>AARON</strong> ORTIZ</span>
+                </a>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html#inicio" class="nav-link">Inicio</a>
+                    <a href="index.html#sobre-mi" class="nav-link">Sobre Mí</a>
+                    <a href="index.html#experiencia" class="nav-link">Experiencia</a>
+                    <a href="index.html#proyectos" class="nav-link">Proyectos</a>
+                    <a href="index.html#habilidades" class="nav-link">Habilidades</a>
+                    <a href="index.html#contacto" class="nav-contact-btn">Contacto</a>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
 
@@ -69,7 +70,7 @@
             </div>
 
             <!-- Buscador -->
-            <div class="search-container">
+            <div class="search-container reveal">
                 <div class="search-box">
                     <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
                     <input type="text" id="searchInput" class="search-input" placeholder="Buscar proyectos por nombre, tecnología o descripción...">
@@ -80,12 +81,12 @@
                 <div id="searchResults" class="search-results" role="status"></div>
             </div>
 
-            <div class="projects-grid" id="projectsGrid">
+            <div class="projects-grid reveal" id="projectsGrid">
                 <!-- Proyecto 1 -->
                 <article class="project-card panel3d" data-tilt data-title="Sistema Web de Gestión Penitenciaria" data-tech="PHP PostgreSQL HTML CSS JavaScript PDO CSRF Auditoría" data-description="Sistema web penitenciario con control de accesos por roles, bitácora de auditoría y seguridad (CSRF, validaciones y consultas preparadas) para gestionar internos, visitas, conductas y fichas médicas.">
                     <div class="project-image">
                         <img src="img/sistema_penitenciario.jpg" alt="Sistema de Gestión Penitenciaria" loading="lazy">
-                        <span class="screen-glare" aria-hidden="true"></span>
+                        
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_05</span>
@@ -113,7 +114,7 @@
                 <article class="project-card panel3d" data-tilt data-title="Sistema Web de Gestión para Gimnasios" data-tech="PHP MySQL POO PDO JavaScript HTML CSS DomPDF Roles" data-description="Sistema web para administrar gimnasios con roles (Administrador/Entrenador/Socio), membresías y pagos, control de asistencia y clases, y generación de recibos/reportes en PDF (DomPDF).">
                     <div class="project-image">
                         <img src="img/sistema_gimnasio.jpg" alt="Gestión de Incidentes Educativos" loading="lazy">
-                        <span class="screen-glare" aria-hidden="true"></span>
+                        
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_06</span>
@@ -141,7 +142,7 @@
                 <article class="project-card panel3d" data-tilt data-title="Sistema de Turnos Médicos" data-tech="PHP MySQL Bootstrap JavaScript" data-description="Aplicación para agendar y gestionar turnos en un centro médico, optimizando la atención y reduciendo tiempos de espera.">
                     <div class="project-image">
                         <img src="img/sistema_turnos.JPG" alt="Sistema de Turnos Médicos" loading="lazy">
-                        <span class="screen-glare" aria-hidden="true"></span>
+                        
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_07</span>
@@ -167,7 +168,7 @@
                 <article class="project-card panel3d" data-tilt data-title="Gestión de Incidentes Educativos" data-tech="PHP PostgreSQL HTML CSS" data-description="Sistema para registrar, gestionar y dar seguimiento a incidentes en instituciones educativas con reportes detallados.">
                     <div class="project-image">
                         <img src="img/sistema_gestion_incidentes.JPG" alt="Gestión de Incidentes Educativos" loading="lazy">
-                        <span class="screen-glare" aria-hidden="true"></span>
+                        
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_08</span>
@@ -193,7 +194,7 @@
                 <article class="project-card panel3d" data-tilt data-title="Sistema de Asistencias" data-tech="PHP MySQL Bootstrap jQuery" data-description="Plataforma para controlar la asistencia de personal o estudiantes, con reportes automáticos y estadísticas.">
                     <div class="project-image">
                         <img src="img/sistema_asistencia.JPG" alt="Sistema de Asistencias" loading="lazy">
-                        <span class="screen-glare" aria-hidden="true"></span>
+                        
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_09</span>
@@ -219,7 +220,7 @@
                 <article class="project-card panel3d" data-tilt data-title="Sistema de Citas Peluquería" data-tech="PHP MySQL Bootstrap JavaScript" data-description="Aplicación para reservar citas en un salón de belleza, con gestión de horarios y notificaciones.">
                     <div class="project-image">
                         <img src="img/sistema_peluqueria.JPG" alt="Sistema de Citas Peluquería" loading="lazy">
-                        <span class="screen-glare" aria-hidden="true"></span>
+                        
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_10</span>
