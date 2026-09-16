@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+﻿<!DOCTYPE html>
+<html lang="es"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Aaron Ortiz</title>
-    <meta name="description" content="Portafolio profesional de Aaron Ortiz, Desarrollador de Software con experiencia en PHP, Laravel, MySQL, PostgreSQL, HTML, CSS, JavaScript, Bootstrap, jQuery, Python y más.">
+    <meta name="description" content="Portafolio profesional de Aaron Ortiz, Desarrollador de Software con experiencia en PHP, Laravel, MySQL, PostgreSQL, HTML, CSS, JavaScript, Bootstrap, jQuery, Python y m├ís.">
     <!-- SEO & Social Media Meta Tags -->
     <meta name="author" content="Aaron Ortiz">
     <meta name="theme-color" content="#05070F">
@@ -21,8 +20,8 @@
     <meta name="twitter:image" content="img/foto_perfil.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700&family=Archivo:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -42,13 +41,13 @@
             </a>
             <div class="nav-menu" id="nav-menu">
                 <a href="#inicio" class="nav-link">Inicio</a>
-                <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+                <a href="#sobre-mi" class="nav-link">Sobre M├¡</a>
                 <a href="#experiencia" class="nav-link">Experiencia</a>
                 <a href="#proyectos" class="nav-link">Proyectos</a>
                 <a href="#habilidades" class="nav-link">Habilidades</a>
                 <a href="#contacto" class="nav-contact-btn">Contacto</a>
             </div>
-            <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+            <button class="hamburger" id="hamburger" aria-label="Abrir men├║" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -66,13 +65,13 @@
 
         <div class="hero-layout">
             <div class="hero-content">
-                <h1 class="hero-title">
+                <h1 class="hero-title" style="transform: translateY(5.27193px); opacity: 0.797234;">
                     Hola, soy <span class="accent">Aaron Ortiz</span>
                 </h1>
-                <p class="hero-subtitle">
+                <p class="hero-subtitle" style="transform: translateY(10.7437px); opacity: 0.51165;">
                     Desarrollador de Software especializado en construir soluciones digitales modernas y eficientes
                 </p>
-                <div class="hero-buttons">
+                <div class="hero-buttons" style="transform: translateY(17.3327px); opacity: 0.0370698;">
                     <a href="#proyectos" class="btn btn-primary">
                         <i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Ver Proyectos
                     </a>
@@ -85,7 +84,7 @@
                 </div>
             </div>
 
-            <aside class="radar" aria-label="Telemetría: sistemas en línea">
+            <aside class="radar" aria-label="Telemetr├¡a: sistemas en l├¡nea" style="transform: scale(0.959422); opacity: 0.323703;">
                 <div class="radar-disc">
                     <div class="radar-ring r1"></div>
                     <div class="radar-ring r2"></div>
@@ -100,7 +99,7 @@
                 </div>
                 <div class="radar-label">
                     <span class="lamp lamp-live" aria-hidden="true"></span>
-                    SISTEMAS EN LÍNEA · 10 MÓDULOS
+                    SISTEMAS EN L├ìNEA ┬À 10 M├ôDULOS
                 </div>
             </aside>
         </div>
@@ -112,11 +111,11 @@
             </div>
             <div class="readout">
                 <span class="readout-num" data-count="3" data-suffix="+">0+</span>
-                <span class="readout-label">Años de Experiencia</span>
+                <span class="readout-label">A├▒os de Experiencia</span>
             </div>
             <div class="readout">
                 <span class="readout-num readout-text">FULL STACK</span>
-                <span class="readout-label">PHP · MySQL · PostgreSQL</span>
+                <span class="readout-label">PHP ┬À MySQL ┬À PostgreSQL</span>
             </div>
         </div>
     </section>
@@ -125,7 +124,7 @@
     <section id="sobre-mi" class="about section">
         <div class="container">
             <div class="about-grid">
-                <div class="about-image panel3d" data-tilt>
+                <div class="about-image panel3d" data-tilt="">
                     <div class="panel-frame">
                         <span class="corner c1"></span>
                         <span class="corner c2"></span>
@@ -138,35 +137,35 @@
                         </div>
                         <img src="img/foto_perfil.jpg" alt="Perfil de Aaron Ortiz">
                         <div class="frame-bottom">
-                            <span class="frame-log">FOTO · CAPTURADA</span>
+                            <span class="frame-log">FOTO ┬À CAPTURADA</span>
                             <span class="frame-log">DSL_01</span>
                         </div>
                     </div>
                 </div>
                 <div class="about-content">
                     <h2 class="section-title">
-                        Sobre <span class="accent">Mí</span>
+                        Sobre <span class="accent">M├¡</span>
                     </h2>
                     <div class="about-text">
-                        <p>Soy <strong>Aaron Ortiz</strong>, un desarrollador de software con 3 años de experiencia
-                            construyendo soluciones digitales. Manejo tecnologías como PHP, MySQL, PostgreSQL, Laravel,
+                        <p>Soy <strong>Aaron Ortiz</strong>, un desarrollador de software con 3 a├▒os de experiencia
+                            construyendo soluciones digitales. Manejo tecnolog├¡as como PHP, MySQL, PostgreSQL, Laravel,
                             HTML, CSS, JavaScript, Bootstrap 5, jQuery, Git, GitHub, UI/UX Design y Python.</p>
-                        <p>He completado más de 6 proyectos que combinan código limpio, arquitectura escalable y diseño
+                        <p>He completado m├ís de 6 proyectos que combinan c├│digo limpio, arquitectura escalable y dise├▒o
                             centrado en el usuario. Me apasiona crear aplicaciones que optimicen procesos y mejoren la
                             experiencia digital.</p>
-                        <p>Mi objetivo es seguir creciendo como profesional y aportar valor a través de soluciones
-                            tecnológicas innovadoras.</p>
+                        <p>Mi objetivo es seguir creciendo como profesional y aportar valor a trav├®s de soluciones
+                            tecnol├│gicas innovadoras.</p>
                     </div>
                     <div class="stats">
-                        <div class="stat" data-tilt>
-                            <span class="stat-kicker">TELEMETRÍA · 01</span>
+                        <div class="stat" data-tilt="">
+                            <span class="stat-kicker">TELEMETR├ìA ┬À 01</span>
                             <div class="stat-number" data-count="6" data-suffix="+">0+</div>
                             <div class="stat-label">Proyectos Completados</div>
                         </div>
-                        <div class="stat" data-tilt>
-                            <span class="stat-kicker">TELEMETRÍA · 02</span>
+                        <div class="stat" data-tilt="">
+                            <span class="stat-kicker">TELEMETR├ìA ┬À 02</span>
                             <div class="stat-number" data-count="3" data-suffix="+">0+</div>
-                            <div class="stat-label">Años de Experiencia</div>
+                            <div class="stat-label">A├▒os de Experiencia</div>
                         </div>
                     </div>
                 </div>
@@ -188,7 +187,7 @@
 
             <div class="experience-grid">
                 <!-- Experiencia 1 -->
-                <div class="experience-card panel3d" data-tilt>
+                <div class="experience-card panel3d" data-tilt="">
                     <div class="experience-header">
                         <div class="experience-icon">
                             <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
@@ -196,15 +195,15 @@
                         <div class="experience-title-content">
                             <h3 class="experience-title">Desarrollador de Software</h3>
                             <span class="company">BK Solutions</span>
-                            <span class="period">2021 – 2023</span>
+                            <span class="period">2021 ÔÇô 2023</span>
                         </div>
                     </div>
                     <div class="experience-content">
                         <ul class="experience-list">
-                            <li>Participé activamente en el desarrollo de un sistema web para la gestión y compra de materiales de construcción, colaborando en todas las etapas del ciclo de vida del proyecto.</li>
-                            <li>Implementé la lógica de negocio y las funcionalidades principales del backend, garantizando un rendimiento eficiente y una arquitectura escalable.</li>
-                            <li>Diseñé y desarrollé la interfaz de usuario utilizando Angular y TypeScript, priorizando un diseño responsive y una experiencia de usuario intuitiva.</li>
-                            <li>Administré la base de datos mediante Firebase, asegurando un almacenamiento seguro, estable y accesible de la información.</li>
+                            <li>Particip├® activamente en el desarrollo de un sistema web para la gesti├│n y compra de materiales de construcci├│n, colaborando en todas las etapas del ciclo de vida del proyecto.</li>
+                            <li>Implement├® la l├│gica de negocio y las funcionalidades principales del backend, garantizando un rendimiento eficiente y una arquitectura escalable.</li>
+                            <li>Dise├▒├® y desarroll├® la interfaz de usuario utilizando Angular y TypeScript, priorizando un dise├▒o responsive y una experiencia de usuario intuitiva.</li>
+                            <li>Administr├® la base de datos mediante Firebase, asegurando un almacenamiento seguro, estable y accesible de la informaci├│n.</li>
                         </ul>
                         <div class="experience-tech">
                             <span class="tech-tag">Angular</span>
@@ -218,27 +217,27 @@
                 </div>
 
                 <!-- Experiencia 2 -->
-                <div class="experience-card panel3d" data-tilt>
+                <div class="experience-card panel3d" data-tilt="">
                     <div class="experience-header">
                         <div class="experience-icon icon-amber">
                             <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
                         </div>
                         <div class="experience-title-content">
-                            <h3 class="experience-title">Proyecto de Vinculación con la Sociedad</h3>
+                            <h3 class="experience-title">Proyecto de Vinculaci├│n con la Sociedad</h3>
                             <span class="company">Universidad Iberoamericana del Ecuador</span>
                             <span class="period">2022</span>
                         </div>
                     </div>
                     <div class="experience-content">
                         <ul class="experience-list">
-                            <li>Lideré talleres de capacitación dirigidos a personas de la tercera edad, enfocados en el uso de aplicaciones móviles para promover la salud y la seguridad.</li>
-                            <li>Organicé y guié actividades formativas destinadas a desarrollar competencias digitales básicas, fortaleciendo la autonomía y calidad de vida de los participantes.</li>
-                            <li>Este proyecto me permitió aplicar mis conocimientos en tecnología educativa y desarrollo social, fomentando la inclusión digital y el aprendizaje significativo.</li>
+                            <li>Lider├® talleres de capacitaci├│n dirigidos a personas de la tercera edad, enfocados en el uso de aplicaciones m├│viles para promover la salud y la seguridad.</li>
+                            <li>Organic├® y gui├® actividades formativas destinadas a desarrollar competencias digitales b├ísicas, fortaleciendo la autonom├¡a y calidad de vida de los participantes.</li>
+                            <li>Este proyecto me permiti├│ aplicar mis conocimientos en tecnolog├¡a educativa y desarrollo social, fomentando la inclusi├│n digital y el aprendizaje significativo.</li>
                         </ul>
                         <div class="experience-tech">
-                            <span class="tech-tag">Capacitación</span>
-                            <span class="tech-tag">Tecnología Educativa</span>
-                            <span class="tech-tag">Inclusión Digital</span>
+                            <span class="tech-tag">Capacitaci├│n</span>
+                            <span class="tech-tag">Tecnolog├¡a Educativa</span>
+                            <span class="tech-tag">Inclusi├│n Digital</span>
                             <span class="tech-tag">Liderazgo</span>
                             <span class="tech-tag">Desarrollo Social</span>
                         </div>
@@ -256,20 +255,20 @@
                     Mis <span class="accent">Proyectos</span>
                 </h2>
                 <p class="section-subtitle">
-                    Algunos de los sistemas que he desarrollado en los últimos años
+                    Algunos de los sistemas que he desarrollado en los ├║ltimos a├▒os
                 </p>
             </div>
             <div class="projects-grid">
-                <!-- Proyecto 1: Carnicería -->
-                <article class="project-card panel3d" data-tilt>
+                <!-- Proyecto 1: Carnicer├¡a -->
+                <article class="project-card panel3d" data-tilt="">
                     <div class="project-image">
-                        <img src="img/sistema_gestion_carniceria.jpg" alt="Sistema de Gestión para Carnicería" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Sistema+Carniceria'">
+                        <img src="img/sistema_gestion_carniceria.jpg" alt="Sistema de Gesti├│n para Carnicer├¡a" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Sistema+Carniceria'">
                         <span class="screen-glare" aria-hidden="true"></span>
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_01</span>
-                        <h3 class="project-title">Sistema de Gestión para Carnicería</h3>
-                        <p class="project-description">Sistema integral basado en Arquitectura MVC para administrar ventas, inventario y usuarios en una carnicería.</p>
+                        <h3 class="project-title">Sistema de Gesti├│n para Carnicer├¡a</h3>
+                        <p class="project-description">Sistema integral basado en Arquitectura MVC para administrar ventas, inventario y usuarios en una carnicer├¡a.</p>
                         <div class="project-tech">
                             <span class="tech-tag">PHP (POO)</span>
                             <span class="tech-tag">MySQL</span>
@@ -287,15 +286,15 @@
                 </article>
 
                 <!-- Proyecto 2: Veterinaria -->
-                <article class="project-card panel3d" data-tilt>
+                <article class="project-card panel3d" data-tilt="">
                     <div class="project-image">
-                        <img src="img/sistema_gestion_veterinaria.jpg" alt="Sistema de Gestión para Clínica Veterinaria" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Sistema+Veterinaria'">
+                        <img src="img/sistema_gestion_veterinaria.jpg" alt="Sistema de Gesti├│n para Cl├¡nica Veterinaria" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Sistema+Veterinaria'">
                         <span class="screen-glare" aria-hidden="true"></span>
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_02</span>
-                        <h3 class="project-title">Sistema de Gestión Veterinaria</h3>
-                        <p class="project-description">Plataforma para clínica veterinaria con citas, historial médico, facturación y reportes en PDF.</p>
+                        <h3 class="project-title">Sistema de Gesti├│n Veterinaria</h3>
+                        <p class="project-description">Plataforma para cl├¡nica veterinaria con citas, historial m├®dico, facturaci├│n y reportes en PDF.</p>
                         <div class="project-tech">
                             <span class="tech-tag">PHP &amp; MySQL</span>
                             <span class="tech-tag">PDO</span>
@@ -313,20 +312,20 @@
                 </article>
 
                 <!-- Proyecto 3: Parqueadero -->
-                <article class="project-card panel3d" data-tilt>
+                <article class="project-card panel3d" data-tilt="">
                     <div class="project-image">
-                        <img src="img/sistema_gestion_parqueadero.jpg" alt="Sistema de Gestión de Parqueaderos" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Sistema+Parqueadero'">
+                        <img src="img/sistema_gestion_parqueadero.jpg" alt="Sistema de Gesti├│n de Parqueaderos" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Sistema+Parqueadero'">
                         <span class="screen-glare" aria-hidden="true"></span>
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_03</span>
-                        <h3 class="project-title">Sistema de Gestión de Parqueaderos</h3>
-                        <p class="project-description">Control de entrada/salida de vehículos, tarifas dinámicas por tipo de vehículo y reportes operativos.</p>
+                        <h3 class="project-title">Sistema de Gesti├│n de Parqueaderos</h3>
+                        <p class="project-description">Control de entrada/salida de veh├¡culos, tarifas din├ímicas por tipo de veh├¡culo y reportes operativos.</p>
                         <div class="project-tech">
                             <span class="tech-tag">PHP</span>
                             <span class="tech-tag">PostgreSQL</span>
                             <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Módulos</span>
+                            <span class="tech-tag">M├│dulos</span>
                         </div>
                         <div class="project-actions">
                             <a href="https://github.com/Aaron776/Sistema_Gestion_Parqueadero" class="repo-btn" target="_blank">
@@ -338,16 +337,16 @@
                     </div>
                 </article>
 
-                <!-- Proyecto 4: Taller Mecánico -->
-                <article class="project-card panel3d" data-tilt>
+                <!-- Proyecto 4: Taller Mec├ínico -->
+                <article class="project-card panel3d" data-tilt="">
                     <div class="project-image">
-                        <img src="img/sistema_gestion_taller_mecanico.jpg" alt="Sistema de Gestión para Taller Mecánico" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Sistema+Taller+Mecanico'">
+                        <img src="img/sistema_gestion_taller_mecanico.jpg" alt="Sistema de Gesti├│n para Taller Mec├ínico" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Sistema+Taller+Mecanico'">
                         <span class="screen-glare" aria-hidden="true"></span>
                     </div>
                     <div class="project-content">
                         <span class="project-sys">SYS_04</span>
-                        <h3 class="project-title">Sistema para Taller Mecánico</h3>
-                        <p class="project-description">Gestión de órdenes de trabajo, seguimiento de estados, roles de usuario y generación de reportes en PDF y Excel.</p>
+                        <h3 class="project-title">Sistema para Taller Mec├ínico</h3>
+                        <p class="project-description">Gesti├│n de ├│rdenes de trabajo, seguimiento de estados, roles de usuario y generaci├│n de reportes en PDF y Excel.</p>
                         <div class="project-tech">
                             <span class="tech-tag">PHP (MVC)</span>
                             <span class="tech-tag">MySQL</span>
@@ -365,10 +364,10 @@
                 </article>
             </div>
 
-            <!-- Botón Ver más Proyectos -->
+            <!-- Bot├│n Ver m├ís Proyectos -->
             <div class="experience-button-container">
                 <a href="mas_proyectos.html" class="btn btn-primary">
-                    <i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Ver más Proyectos
+                    <i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Ver m├ís Proyectos
                 </a>
             </div>
         </div>
@@ -382,11 +381,11 @@
                     Mis <span class="accent">Habilidades</span>
                 </h2>
                 <p class="section-subtitle">
-                    Tecnologías y herramientas que domino para crear soluciones digitales completas
+                    Tecnolog├¡as y herramientas que domino para crear soluciones digitales completas
                 </p>
             </div>
             <div class="skills-grid">
-                <div class="skill-category panel3d" data-tilt>
+                <div class="skill-category panel3d" data-tilt="">
                     <div class="skill-icon">
                         <i class="fa-solid fa-server" aria-hidden="true"></i>
                     </div>
@@ -401,7 +400,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category panel3d" data-tilt>
+                <div class="skill-category panel3d" data-tilt="">
                     <div class="skill-icon icon-amber">
                         <i class="fa-solid fa-window-restore" aria-hidden="true"></i>
                     </div>
@@ -415,7 +414,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category panel3d" data-tilt>
+                <div class="skill-category panel3d" data-tilt="">
                     <div class="skill-icon icon-mint">
                         <i class="fa-solid fa-pen-ruler" aria-hidden="true"></i>
                     </div>
@@ -427,7 +426,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category panel3d" data-tilt>
+                <div class="skill-category panel3d" data-tilt="">
                     <div class="skill-icon icon-violet">
                         <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
                     </div>
@@ -453,7 +452,7 @@
                             <span class="progress-percent">40%</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" data-width="40"></div>
+                            <div class="progress-fill" data-width="40" style="width: 0%;"></div>
                         </div>
                     </div>
 
@@ -466,7 +465,7 @@
                             <span class="progress-percent">70%</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" data-width="70"></div>
+                            <div class="progress-fill" data-width="70" style="width: 0%;"></div>
                         </div>
                     </div>
 
@@ -479,7 +478,7 @@
                             <span class="progress-percent">50%</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" data-width="50"></div>
+                            <div class="progress-fill" data-width="50" style="width: 0%;"></div>
                         </div>
                     </div>
 
@@ -492,7 +491,7 @@
                             <span class="progress-percent">85%</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" data-width="85"></div>
+                            <div class="progress-fill" data-width="85" style="width: 0%;"></div>
                         </div>
                     </div>
 
@@ -505,7 +504,7 @@
                             <span class="progress-percent">75%</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" data-width="75"></div>
+                            <div class="progress-fill" data-width="75" style="width: 0%;"></div>
                         </div>
                     </div>
 
@@ -518,7 +517,7 @@
                             <span class="progress-percent">50%</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" data-width="50"></div>
+                            <div class="progress-fill" data-width="50" style="width: 0%;"></div>
                         </div>
                     </div>
 
@@ -531,7 +530,7 @@
                             <span class="progress-percent">60%</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" data-width="60"></div>
+                            <div class="progress-fill" data-width="60" style="width: 0%;"></div>
                         </div>
                     </div>
                 </div>
@@ -544,17 +543,17 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">
-                    <span class="accent">Contáctame</span>
+                    <span class="accent">Cont├íctame</span>
                 </h2>
                 <p class="section-subtitle">
-                    ¿Tienes un proyecto en mente? ¡Hablemos!
+                    ┬┐Tienes un proyecto en mente? ┬íHablemos!
                 </p>
             </div>
 
             <div class="contact-content">
-                <!-- Información de contacto -->
-                <div class="contact-info panel3d" data-tilt>
-                    <h3 class="panel-heading">Información de Contacto</h3>
+                <!-- Informaci├│n de contacto -->
+                <div class="contact-info panel3d" data-tilt="">
+                    <h3 class="panel-heading">Informaci├│n de Contacto</h3>
 
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -571,7 +570,7 @@
                             <i class="fa-solid fa-phone" aria-hidden="true"></i>
                         </div>
                         <div class="contact-details">
-                            <div class="contact-label">Teléfono</div>
+                            <div class="contact-label">Tel├®fono</div>
                             <div class="contact-value">+593 96 212 9090</div>
                         </div>
                     </div>
@@ -581,7 +580,7 @@
                             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                         </div>
                         <div class="contact-details">
-                            <div class="contact-label">Ubicación</div>
+                            <div class="contact-label">Ubicaci├│n</div>
                             <div class="contact-value">Quito, Ecuador</div>
                         </div>
                     </div>
@@ -606,8 +605,8 @@
                 </div>
 
                 <!-- Formulario de contacto -->
-                <div class="contact-form panel3d" data-tilt>
-                    <h3 class="panel-heading">Envíame un Mensaje</h3>
+                <div class="contact-form panel3d" data-tilt="">
+                    <h3 class="panel-heading">Env├¡ame un Mensaje</h3>
                     <form id="contactForm" class="contact-form">
                         <!-- Honeypot field (hidden from users) -->
                         <div style="display: none;">
@@ -615,22 +614,22 @@
                         </div>
                         <div class="form-group">
                             <label for="name">Nombre completo *</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" required="">
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required="">
                         </div>
 
                         <div class="form-group">
                             <label for="subject">Asunto *</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <input type="text" id="subject" name="subject" required="">
                         </div>
 
                         <div class="form-group">
                             <label for="message">Mensaje *</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea id="message" name="message" rows="5" required=""></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-full">
@@ -650,15 +649,15 @@
                     <h3 class="footer-title">Aaron Ortiz</h3>
                     <p class="footer-text">
                         Desarrollador de software especializado en soluciones modernas con PHP, Laravel, PostgreSQL,
-                        MySQL, JavaScript y más.
+                        MySQL, JavaScript y m├ís.
                     </p>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-subtitle">Enlaces Rápidos</h4>
+                    <h4 class="footer-subtitle">Enlaces R├ípidos</h4>
                     <ul class="footer-links">
                         <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#sobre-mi">Sobre Mí</a></li>
+                        <li><a href="#sobre-mi">Sobre M├¡</a></li>
                         <li><a href="#proyectos">Proyectos</a></li>
                         <li><a href="#habilidades">Habilidades</a></li>
                         <li><a href="#contacto">Contacto</a></li>
@@ -685,7 +684,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>© 2025 Aaron Ortiz. Desarrollado con ❤️ y mucho código.</p>
+                <p>┬® 2025 Aaron Ortiz. Desarrollado con ÔØñ´©Å y mucho c├│digo.</p>
             </div>
         </div>
     </footer>
@@ -693,6 +692,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/email.js"></script>
-</body>
 
-</html>
+
+</body></html>
