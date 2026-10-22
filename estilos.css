@@ -1284,6 +1284,106 @@ a {
     background: var(--cobalt-soft);
 }
 
+/* IA generativa & LLMs — plan de formación */
+.skills-ai {
+    grid-column: 1 / -1;
+    position: relative;
+    padding: 2.2rem;
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-1);
+}
+
+.skills-ai-head {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.skills-ai .skill-icon {
+    margin-bottom: 0;
+}
+
+.skill-icon.icon-ai {
+    background: var(--cobalt-deep);
+    color: var(--paper-2);
+    box-shadow: 0 16px 34px -16px rgba(15, 24, 196, 0.5);
+}
+
+.skills-ai-heading {
+    min-width: 0;
+}
+
+.skills-ai-heading .skill-title {
+    margin-bottom: 0;
+    font-size: 1.35rem;
+}
+
+.skills-ai-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.63rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+}
+
+.skills-ai-badge {
+    padding: 0.2rem 0.6rem;
+    color: var(--cobalt-deep);
+    background: var(--cobalt-soft);
+    border: 1px solid rgba(30, 47, 245, 0.22);
+    border-radius: var(--radius-pill);
+}
+
+.skills-ai-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--ink-faint);
+}
+
+.skills-ai-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 1.6rem 1.8rem;
+    margin-top: 1.6rem;
+    list-style: none;
+}
+
+.skills-ai-item {
+    position: relative;
+    padding-left: 2.4rem;
+}
+
+.skills-ai-idx {
+    position: absolute;
+    top: 0.1rem;
+    left: 0;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    color: var(--cobalt);
+}
+
+.skills-ai-item h4 {
+    margin-bottom: 0.35rem;
+    font-size: 0.95rem;
+    color: var(--ink);
+}
+
+.skills-ai-item p {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: var(--ink-dim);
+}
+
 /* Progreso */
 .progress-section {
     padding: 2.4rem;
@@ -1919,6 +2019,18 @@ a {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skills-ai {
+        padding: 1.7rem;
+    }
+
+    .skills-ai-head {
+        align-items: flex-start;
+    }
+
+    .skills-ai-list {
+        gap: 1.3rem;
     }
 
     .progress-section {
