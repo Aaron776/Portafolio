@@ -7,7 +7,7 @@
     <meta name="description" content="Portafolio de proyectos de Aaron Ortiz, Desarrollador de Software con experiencia en PHP, Laravel, MySQL, PostgreSQL, HTML, CSS, JavaScript, Bootstrap, jQuery, Python y más.">
     <!-- SEO & Social Media Meta Tags -->
     <meta name="author" content="Aaron Ortiz">
-    <meta name="theme-color" content="#F3EFE6">
+    <meta name="theme-color" content="#0C1512">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/Aaron776">
     <meta property="og:title" content="Más Proyectos - Aaron Ortiz | Desarrollador de Software">
@@ -22,7 +22,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Familjen+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -31,6 +31,7 @@
 <body>
     <!-- Estudio: fondo de luz -->
     <div class="studio-wash" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -360,19 +361,6 @@
             searchInput.value = '';
             searchProjects();
             searchInput.focus();
-        });
-
-        // Animación al cargar
-        window.addEventListener('load', function() {
-            projectCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                setTimeout(() => {
-                    card.style.transition = 'all 0.6s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
         });
     </script>
 </body>
