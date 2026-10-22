@@ -316,6 +316,87 @@ h4 {
     border-color: var(--copper);
 }
 
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    padding: 8px 12px;
+    background: radial-gradient(circle at 50% 50%, rgba(226, 160, 99, 0.06), transparent 70%);
+    position: relative;
+    clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+    transition: color 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease), box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.lang-toggle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(120px circle at var(--mx, 50%) var(--my, 50%), rgba(242, 184, 124, 0.12), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s var(--ease);
+}
+
+.lang-toggle-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--copper);
+    box-shadow: 0 0 0 4px rgba(226, 160, 99, 0.12);
+    transition: box-shadow 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.lang-toggle-text {
+    position: relative;
+    z-index: 1;
+}
+
+.lang-toggle:hover {
+    color: var(--copper-bright);
+    border-color: rgba(226, 160, 99, 0.6);
+    transform: translateY(-1px);
+}
+
+.lang-toggle:hover::before {
+    opacity: 1;
+}
+
+.lang-toggle:hover .lang-toggle-dot {
+    box-shadow: 0 0 0 6px rgba(226, 160, 99, 0.16);
+}
+
+.lang-toggle:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(242, 184, 124, 0.32);
+    border-color: var(--copper-bright);
+}
+
+.lang-toggle.is-en .lang-toggle-text::before {
+    content: "ES";
+}
+
+.lang-toggle.is-en .lang-toggle-text::after {
+    content: "EN";
+    margin-left: 6px;
+    color: var(--ink-faint);
+}
+
+.lang-toggle:not(.is-en) .lang-toggle-text::before {
+    content: "EN";
+}
+
+.lang-toggle:not(.is-en) .lang-toggle-text::after {
+    content: "ES";
+    margin-left: 6px;
+    color: var(--ink-faint);
+}
+
 .hamburger {
     position: relative;
     z-index: 1005;
@@ -2182,6 +2263,16 @@ body.nav-open {
     .nav-menu.active {
         transform: translateX(0);
         visibility: visible;
+    }
+
+    .lang-toggle {
+        display: none;
+    }
+
+    .nav-menu .lang-toggle {
+        display: inline-flex;
+        align-self: flex-start;
+        margin-top: 10px;
     }
 
     .nav-link {
