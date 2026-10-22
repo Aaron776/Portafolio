@@ -1,4 +1,4 @@
-// app.js — Estudio de Sistemas · planos 3D, tilt, parallax, reveals
+// app.js — Atlas Técnico · hojas 3D, tilt, parallax, reveals
 (function () {
   "use strict";
 
@@ -27,26 +27,33 @@
     var navMenu = document.getElementById("nav-menu");
     if (!hamburger || !navMenu) return;
 
-    hamburger.addEventListener("click", function () {
-      var open = !hamburger.classList.contains("active");
-      hamburger.classList.toggle("active");
+    function setMenu(open) {
+      hamburger.classList.toggle("active", open);
       hamburger.setAttribute("aria-expanded", String(open));
-      navMenu.classList.toggle("active");
+      navMenu.classList.toggle("active", open);
+      document.body.classList.toggle("nav-open", open);
+    }
+
+    hamburger.addEventListener("click", function () {
+      setMenu(!hamburger.classList.contains("active"));
     });
 
     navMenu.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        hamburger.classList.remove("active");
-        hamburger.setAttribute("aria-expanded", "false");
-        navMenu.classList.remove("active");
+        setMenu(false);
       });
     });
 
     document.addEventListener("click", function (e) {
       if (navMenu.classList.contains("active") && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-        hamburger.classList.remove("active");
-        hamburger.setAttribute("aria-expanded", "false");
-        navMenu.classList.remove("active");
+        setMenu(false);
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && navMenu.classList.contains("active")) {
+        setMenu(false);
+        hamburger.focus();
       }
     });
   }
@@ -109,15 +116,18 @@
     var ty = 0;
 
     function paint() {
-      var rx = -ty * 7;
-      var ry = tx * 9;
+      var rx = -ty * 9;
+      var ry = tx * 13;
       scene.style.setProperty("--rx", rx.toFixed(2) + "deg");
       scene.style.setProperty("--ry", ry.toFixed(2) + "deg");
+      stage.style.setProperty("--mx", ((tx * 0.5 + 0.5) * 100).toFixed(1) + "%");
+      stage.style.setProperty("--my", ((ty * 0.5 + 0.5) * 100).toFixed(1) + "%");
       planes.forEach(function (plane) {
         var depth = parseFloat(plane.getAttribute("data-depth") || "0.8");
+        var z = parseFloat(plane.getAttribute("data-z") || "0");
         var rot = getComputedStyle(plane).getPropertyValue("--rot") || "0deg";
         plane.style.transform =
-          "translate3d(" + (tx * depth * 22).toFixed(1) + "px, " + (ty * depth * 14).toFixed(1) + "px, 0) rotate(" + rot.trim() + ")";
+          "translate3d(" + (tx * depth * 26).toFixed(1) + "px, " + (ty * depth * 16).toFixed(1) + "px, 0) rotate(" + rot.trim() + ") translateZ(" + z + "px)";
       });
       raf = null;
     }
@@ -255,6 +265,53 @@
     });
   }
 
+  function initScrollProgress() {
+    var bar = document.querySelector(".scroll-progress span");
+    if (!bar) return;
+
+    var update = function () {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
+      bar.style.transform = "scaleX(" + p.toFixed(4) + ")";
+    };
+
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+    update();
+  }
+
+  function initScrollSpy() {
+    var links = document.querySelectorAll(".nav-menu .nav-link");
+    if (!links.length) return;
+
+    var map = [];
+    links.forEach(function (link) {
+      var href = link.getAttribute("href");
+      if (!href || href.charAt(0) !== "#" || href.length < 2) return;
+      var section = document.querySelector(href);
+      if (section) map.push({ link: link, section: section });
+    });
+    if (!map.length) return;
+
+    var update = function () {
+      var marker = window.scrollY + window.innerHeight * 0.35;
+      var current = null;
+      map.forEach(function (item) {
+        if (item.section.offsetTop <= marker) current = item;
+      });
+      if (current && marker > current.section.offsetTop + current.section.offsetHeight) {
+        current = null;
+      }
+      map.forEach(function (item) {
+        item.link.classList.toggle("is-active", item === current);
+      });
+    };
+
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+    update();
+  }
+
   /* ---------- Onda al hacer clic en botones ---------- */
   function initButtonRipple() {
     if (reduceMotion) return;
@@ -294,6 +351,8 @@
     initTilt3D();
     initCountUp();
     initScrollReveal();
+    initScrollProgress();
+    initScrollSpy();
     initButtonRipple();
   }
 
