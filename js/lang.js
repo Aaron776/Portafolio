@@ -14,11 +14,11 @@
         chip: "SISTEMAS EN LÍNEA · 10 MÓDULOS",
         tag: "AARON ORTIZ",
         sys: "SISTEMAS",
-        rev: "LÁMINA 00 · REV 2025"
+        rev: "REV 2025"
       },
       ledger: [
-        ["3+", "AÑOS DE EXPERIENCIA"],
-        ["6+", "PROYECTOS COMPLETADOS"],
+        ["3", "AÑOS DE EXPERIENCIA"],
+        ["3", "PROYECTOS COMPLETADOS"],
         ["10+", "SISTEMAS DESARROLLADOS"]
       ],
       about: {
@@ -28,10 +28,10 @@
         p2: "Especializado en el desarrollo full-stack con <strong>PHP, Laravel, PostgreSQL, MySQL, JavaScript</strong> y tecnologías modernas. Me apasiona transformar ideas complejas en soluciones simples y funcionales.",
         p3: "Siempre en búsqueda de nuevos desafíos para seguir aprendiendo y aportando valor a cada proyecto.",
         s1k: "+ EXPERIENCIA",
-        s1n: "3+",
+        s1n: "3",
         s1l: "AÑOS",
         s2k: "+ PROYECTOS",
-        s2n: "6+",
+        s2n: "3",
         s2l: "COMPLETADOS"
       },
       exp: {
@@ -105,7 +105,7 @@
         nav: "Navegación",
         social: "Redes Sociales",
         copy: "© 2025 Aaron Ortiz. Todos los derechos reservados.",
-        tag: "LÁMINA 06 · CIERRE DE ATLAS"
+        tag: "CIERRE DE ATLAS"
       },
       catalog: {
         plate: "Catálogo de Proyectos",
@@ -131,11 +131,11 @@
         chip: "SYSTEMS ONLINE · 10 MODULES",
         tag: "AARON ORTIZ",
         sys: "SYSTEMS",
-        rev: "PLATE 00 · REV 2025"
+        rev: "REV 2025"
       },
       ledger: [
-        ["3+", "YEARS OF EXPERIENCE"],
-        ["6+", "PROJECTS COMPLETED"],
+        ["3", "YEARS OF EXPERIENCE"],
+        ["3", "PROJECTS COMPLETED"],
         ["10+", "SYSTEMS DEVELOPED"]
       ],
       about: {
@@ -145,10 +145,10 @@
         p2: "Specialized in full-stack development with <strong>PHP, Laravel, PostgreSQL, MySQL, JavaScript</strong> and modern technologies. I love turning complex ideas into simple, functional solutions.",
         p3: "Always looking for new challenges to keep learning and adding value to every project.",
         s1k: "+ EXPERIENCE",
-        s1n: "3+",
+        s1n: "3",
         s1l: "YEARS",
         s2k: "+ PROJECTS",
-        s2n: "6+",
+        s2n: "3",
         s2l: "COMPLETED"
       },
       exp: {
@@ -222,7 +222,7 @@
         nav: "Navigation",
         social: "Social",
         copy: "© 2025 Aaron Ortiz. All rights reserved.",
-        tag: "PLATE 06 · CLOSING ATLAS"
+        tag: "CLOSING ATLAS"
       },
       catalog: {
         plate: "Project Catalog",
@@ -237,6 +237,70 @@
       }
     }
   };
+
+  // Repository names identify cards consistently across both pages.
+  const projectEnglish = {
+    Sistema_Gestion_Carniceria: [
+      "Butcher Shop Management System",
+      "Comprehensive MVC-based system for managing sales, inventory and users in a butcher shop."
+    ],
+    Sistema_Gestion_Veterinaria: [
+      "Veterinary Clinic Management System",
+      "Veterinary clinic platform with appointments, medical records, billing and PDF reports."
+    ],
+    Sistema_Gestion_Parqueadero: [
+      "Parking Management System",
+      "Vehicle entry and exit tracking, dynamic rates by vehicle type and operational reports."
+    ],
+    Sistema_Gestion_Taller_Mecanico: [
+      "Auto Repair Shop Management System",
+      "Work order management, status tracking, user roles and PDF and Excel report generation."
+    ],
+    Sistemas_Gestion_Penintenciaria: [
+      "Prison Management Web System",
+      "Prison management web system with role-based access control, audit logging and security (CSRF protection, validation and prepared queries) to manage inmates, visits, conduct records and medical records."
+    ],
+    Sistema_Gestion_Gimnasio: [
+      "Gym Management Web System",
+      "Gym management web system with Administrator, Trainer and Member roles, membership and payment management, attendance tracking, classes and PDF receipt/report generation using DomPDF."
+    ],
+    "Sistema-Agendar-Turnos": [
+      "Medical Appointment System",
+      "Application for scheduling and managing appointments at a medical center, improving patient care and reducing waiting times."
+    ],
+    Sistema_Gestion_Incidentes_Educativos: [
+      "School Incident Management",
+      "System for recording, managing and tracking incidents at educational institutions, with detailed reports."
+    ],
+    Sistema_Asistencias: [
+      "Attendance Management System",
+      "Platform for tracking staff or student attendance, with automated reports and statistics."
+    ],
+    Sistemas_Reservas_Peluqueria: [
+      "Hair Salon Appointment System",
+      "Application for booking appointments at a beauty salon, with schedule management and notifications."
+    ]
+  };
+  const originalProjects = new WeakMap();
+  function translateProjects(lang) {
+    document.querySelectorAll(".project-card").forEach(card => {
+      const title = card.querySelector(".project-title");
+      const description = card.querySelector(".project-description");
+      const link = card.querySelector(".repo-btn");
+      if (!title || !description || !link) return;
+      const slug = new URL(link.href).pathname.split("/").filter(Boolean).pop().replace(/\.git$/, "");
+      const translation = projectEnglish[slug];
+      if (!translation) return;
+      const image = card.querySelector("img");
+      if (!originalProjects.has(card)) originalProjects.set(card, {
+        title: title.textContent, description: description.textContent, alt: image?.getAttribute("alt")
+      });
+      const original = originalProjects.get(card);
+      title.textContent = lang === "en" ? translation[0] : original.title;
+      description.textContent = lang === "en" ? translation[1] : original.description;
+      if (image && original.alt !== null) image.alt = lang === "en" ? translation[0] : original.alt;
+    });
+  }
 
   function applyLang(lang) {
     const t = dict[lang] || dict.es;
@@ -294,22 +358,49 @@
     set("#experiencia .section-header::before", t.exp.plate);
     set("#experiencia .section-title", t.exp.title, true);
     set("#experiencia .section-subtitle", t.exp.sub);
-    set("#experiencia .experience-grid .experience-card:nth-child(1) .experience-title", t.exp.p1t);
-    set("#experiencia .experience-grid .experience-card:nth-child(1) .company", t.exp.p1c);
-    set("#experiencia .experience-grid .experience-card:nth-child(1) .period", t.exp.p1p);
-    const e1 = document.querySelectorAll("#experiencia .experience-grid .experience-card:nth-child(1) .experience-list li");
+    set("#experience-existing-1 .experience-title", t.exp.p1t);
+    set("#experience-existing-1 .company", t.exp.p1c);
+    set("#experience-existing-1 .period", t.exp.p1p);
+    const e1 = document.querySelectorAll("#experience-existing-1 .experience-list li");
     t.exp.p1i.forEach((v, i) => { if (e1[i]) e1[i].textContent = v; });
-    set("#experiencia .experience-grid .experience-card:nth-child(2) .experience-title", t.exp.p2t);
-    set("#experiencia .experience-grid .experience-card:nth-child(2) .company", t.exp.p2c);
-    set("#experiencia .experience-grid .experience-card:nth-child(2) .period", t.exp.p2p);
-    const e2 = document.querySelectorAll("#experiencia .experience-grid .experience-card:nth-child(2) .experience-list li");
+    set("#experience-existing-2 .experience-title", t.exp.p2t);
+    set("#experience-existing-2 .company", t.exp.p2c);
+    set("#experience-existing-2 .period", t.exp.p2p);
+    const e2 = document.querySelectorAll("#experience-existing-2 .experience-list li");
     t.exp.p2i.forEach((v, i) => { if (e2[i]) e2[i].textContent = v; });
+    const cruxbyte = lang === "en" ? {
+      title: "Software Developer",
+      company: "CruxByte ERP / Collaborative project",
+      period: "2026 – Present",
+      items: [
+        "I participate in developing a modular ERP for business management.",
+        "I implement and review features for sales, purchasing, inventory, finance and electronic invoicing.",
+        "I collaborate on architecture decisions, per-client data separation and access controls.",
+        "I test and review changes using branches, Pull Requests and CI."
+      ]
+    } : {
+      title: "Desarrollador de Software",
+      company: "CruxByte ERP / Proyecto colaborativo",
+      period: "2026 – Presente",
+      items: [
+        "Participo en el desarrollo de un ERP modular para la gestión empresarial.",
+        "Implemento y reviso funcionalidades para ventas, compras, inventario, finanzas y facturación electrónica.",
+        "Colaboro en decisiones sobre arquitectura, separación de datos por cliente y controles de acceso.",
+        "Realizo pruebas y revisión de cambios mediante ramas, Pull Requests y CI."
+      ]
+    };
+    set("#experience-cruxbyte .experience-title", cruxbyte.title);
+    set("#experience-cruxbyte .company", cruxbyte.company);
+    set("#experience-cruxbyte .period", cruxbyte.period);
+    const cruxbyteItems = document.querySelectorAll("#experience-cruxbyte .experience-list li");
+    cruxbyte.items.forEach((text, i) => { if (cruxbyteItems[i]) cruxbyteItems[i].textContent = text; });
     set(".experience-button-container .btn", `<i class="fa-solid fa-briefcase" aria-hidden="true"></i> ${t.exp.btn}`, true);
 
     set("#proyectos .section-header::before", t.proj.plate);
     set("#proyectos .section-title", t.proj.title, true);
     set("#proyectos .section-subtitle", t.proj.sub);
     setAll(".project-card .project-sys", t.proj.sys);
+    translateProjects(lang);
     setAll(".repo-btn", `<span>${t.proj.btn}</span><i class="fa-solid fa-arrow-right repo-arrow" aria-hidden="true"></i>`, true);
     set(".section-top .experience-button-container .btn, #proyectos ~ .experience-button-container .btn", `<i class="fa-solid fa-layer-group" aria-hidden="true"></i> ${t.proj.more}`, true);
 
@@ -360,6 +451,7 @@
     set("#resultsCount", t.catalog.count);
     set("#noResults h3", t.catalog.noneT);
     set("#noResults p", t.catalog.noneP);
+    if (si?.value) si.dispatchEvent(new Event("input"));
     set(".footer .nav-logo-name, header .nav-logo-name", "<strong>AARON</strong> ORTIZ", true);
   }
 

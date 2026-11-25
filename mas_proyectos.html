@@ -7,7 +7,7 @@
     <meta name="description" content="Portafolio de proyectos de Aaron Ortiz, Desarrollador de Software con experiencia en PHP, Laravel, MySQL, PostgreSQL, HTML, CSS, JavaScript, Bootstrap, jQuery, Python y más.">
     <!-- SEO & Social Media Meta Tags -->
     <meta name="author" content="Aaron Ortiz">
-    <meta name="theme-color" content="#0C1512">
+    <meta name="theme-color" content="#F2F4F7">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/Aaron776">
     <meta property="og:title" content="Más Proyectos - Aaron Ortiz | Desarrollador de Software">
@@ -25,6 +25,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="perla-zafiro.css" id="light-theme">
+    <link rel="stylesheet" href="temas.css">
+    <script src="js/temas.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 
@@ -316,9 +319,9 @@
             let visibleCount = 0;
 
             projectCards.forEach(card => {
-                const title = card.getAttribute('data-title').toLowerCase();
+                const title = (card.getAttribute('data-title') + ' ' + card.querySelector('.project-title').textContent).toLowerCase();
                 const tech = card.getAttribute('data-tech').toLowerCase();
-                const description = card.getAttribute('data-description').toLowerCase();
+                const description = (card.getAttribute('data-description') + ' ' + card.querySelector('.project-description').textContent).toLowerCase();
 
                 const matches = title.includes(searchTerm) ||
                     tech.includes(searchTerm) ||

@@ -7,7 +7,7 @@
     <meta name="description" content="Portafolio profesional de Aaron Ortiz, Desarrollador de Software con experiencia en PHP, Laravel, MySQL, PostgreSQL, HTML, CSS, JavaScript, Bootstrap, jQuery, Python y más.">
     <!-- SEO & Social Media Meta Tags -->
     <meta name="author" content="Aaron Ortiz">
-    <meta name="theme-color" content="#0C1512">
+    <meta name="theme-color" content="#F2F4F7">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/Aaron776">
     <meta property="og:title" content="Portafolio - Aaron Ortiz | Desarrollador de Software">
@@ -25,6 +25,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="perla-zafiro.css" id="light-theme">
+    <link rel="stylesheet" href="temas.css">
+    <script src="js/temas.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 
@@ -127,11 +130,11 @@
         <div class="hero-ledger reveal" aria-label="Indicadores">
             <div class="ledger">
                 <div class="ledger-item">
-                    <span class="ledger-num" data-count="6" data-suffix="+">0+</span>
+                    <span class="ledger-num" data-count="3">3</span>
                     <span class="ledger-text">Proyectos Completados</span>
                 </div>
                 <div class="ledger-item">
-                    <span class="ledger-num" data-count="3" data-suffix="+">0+</span>
+                    <span class="ledger-num" data-count="3">3</span>
                     <span class="ledger-text">Años de Experiencia</span>
                 </div>
                 <div class="ledger-item">
@@ -167,7 +170,7 @@
                         <p>Soy <strong>Aaron Ortiz</strong>, un desarrollador de software con 3 años de experiencia
                             construyendo soluciones digitales. Manejo tecnologías como PHP, MySQL, PostgreSQL, Laravel,
                             HTML, CSS, JavaScript, Bootstrap 5, jQuery, Git, GitHub, UI/UX Design y Python.</p>
-                        <p>He completado más de 6 proyectos que combinan código limpio, arquitectura escalable y diseño
+                        <p>He completado 3 proyectos que combinan código limpio, arquitectura escalable y diseño
                             centrado en el usuario. Me apasiona crear aplicaciones que optimicen procesos y mejoren la
                             experiencia digital.</p>
                         <p>Mi objetivo es seguir creciendo como profesional y aportar valor a través de soluciones
@@ -176,12 +179,12 @@
                     <div class="stats reveal">
                         <div class="stat" data-tilt>
                             <span class="stat-kicker">Registro · 01</span>
-                            <div class="stat-number" data-count="6" data-suffix="+">0+</div>
+                            <div class="stat-number" data-count="3">3</div>
                             <div class="stat-label">Proyectos Completados</div>
                         </div>
                         <div class="stat" data-tilt>
                             <span class="stat-kicker">Registro · 02</span>
-                            <div class="stat-number" data-count="3" data-suffix="+">0+</div>
+                            <div class="stat-number" data-count="3">3</div>
                             <div class="stat-label">Años de Experiencia</div>
                         </div>
                     </div>
@@ -203,8 +206,37 @@
             </div>
 
             <div class="experience-grid reveal">
+                <div class="experience-card panel3d" id="experience-cruxbyte" data-tilt>
+                    <div class="experience-header">
+                        <div class="experience-icon">
+                            <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+                        </div>
+                        <div class="experience-title-content">
+                            <h3 class="experience-title">Desarrollador de Software</h3>
+                            <span class="company">CruxByte ERP / Proyecto colaborativo</span>
+                            <span class="period">2026 – Presente</span>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <ul class="experience-list">
+                            <li>Participo en el desarrollo de un ERP modular para la gestión empresarial.</li>
+                            <li>Implemento y reviso funcionalidades para ventas, compras, inventario, finanzas y facturación electrónica.</li>
+                            <li>Colaboro en decisiones sobre arquitectura, separación de datos por cliente y controles de acceso.</li>
+                            <li>Realizo pruebas y revisión de cambios mediante ramas, Pull Requests y CI.</li>
+                        </ul>
+                        <div class="experience-tech">
+                            <span class="tech-tag">PYTHON</span>
+                            <span class="tech-tag">DJANGO</span>
+                            <span class="tech-tag">REACT</span>
+                            <span class="tech-tag">TYPESCRIPT</span>
+                            <span class="tech-tag">POSTGRESQL</span>
+                            <span class="tech-tag">DOCKER</span>
+                            <span class="tech-tag">GITHUB</span>
+                        </div>
+                    </div>
+                </div>
                 <!-- Experiencia 1 -->
-                <div class="experience-card panel3d" data-tilt>
+                <div class="experience-card panel3d" id="experience-existing-1" data-tilt>
                     <div class="experience-header">
                         <div class="experience-icon">
                             <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
@@ -234,7 +266,7 @@
                 </div>
 
                 <!-- Experiencia 2 -->
-                <div class="experience-card panel3d" data-tilt>
+                <div class="experience-card panel3d" id="experience-existing-2" data-tilt>
                     <div class="experience-header">
                         <div class="experience-icon icon-amber">
                             <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>

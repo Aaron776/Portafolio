@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Comparar modo oscuro — Aaron Ortiz</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;height:100dvh;display:flex;flex-direction:column;font:14px/1.4 "Segoe UI",sans-serif;background:#f1f4f7;color:#182435}
+    header{padding:14px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:white;border-bottom:1px solid #ccd4dd}
+    h1{font-size:15px;margin:0}p{font-size:12px;margin:4px 0 0;color:#566477}
+    .options{display:flex;gap:8px;flex-wrap:wrap}button{font:inherit;border:1px solid #bac5d1;border-radius:6px;background:white;color:#182435;padding:11px 13px;cursor:pointer;display:flex;align-items:center;gap:8px}
+    button[aria-pressed=true]{background:#182435;color:white;border-color:#182435}button:focus-visible,a:focus-visible{outline:3px solid #285c9b;outline-offset:3px}
+    .swatch{width:12px;height:12px;border-radius:50%}.note{padding:8px 20px;display:flex;gap:15px;justify-content:space-between;font-size:12px}.note a{color:#225e82}
+    iframe{width:100%;flex:1;min-height:0;border:0;background:#181a1d}
+    @media(max-width:650px){header{padding:10px 12px;gap:10px}.options{display:grid;grid-template-columns:1fr 1fr;width:100%}button{font-size:12px;padding:10px}.note{padding:8px 12px;font-size:11px}}
+  </style>
+  <script src="js/paletas.js" defer></script>
+</head>
+<body data-comparison="dark">
+  <header>
+    <div><h1>Un nuevo modo oscuro</h1><p>Misma página y tipografía. Compara los colores.</p></div>
+    <div class="options" role="group" aria-label="Paleta oscura">
+      <button data-palette="ambar" aria-pressed="true"><span class="swatch" style="background:#e6b46a"></span>Carbón / ámbar</button>
+      <button data-palette="jade" aria-pressed="false"><span class="swatch" style="background:#79cdb5"></span>Petróleo / jade</button>
+      <button data-palette="plata" aria-pressed="false"><span class="swatch" style="background:#b8c7d9"></span>Negro suave / plata</button>
+      <button data-palette="original" aria-pressed="false"><span class="swatch" style="background:#b9c7fa"></span>Oscuro actual</button>
+    </div>
+  </header>
+  <div class="note"><span id="status" aria-live="polite">Cargando ejemplos…</span><a href="index.html" target="_blank" rel="noopener">Abrir portafolio</a></div>
+  <iframe id="preview" title="Portafolio con la propuesta de modo oscuro" src="index.html"></iframe>
+</body>
+</html>
