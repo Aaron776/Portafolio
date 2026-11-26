@@ -69,17 +69,18 @@
         plate: "Mis Habilidades",
         title: "Stack <span class=accent>tecnológico</span>",
         sub: "Herramientas y tecnologías que utilizo para desarrollar soluciones",
+        ribbon: "Cinta de stack tecnológico",
         c1: "Backend",
         c2: "Frontend",
         c3: "Base de Datos",
-        c4: "Herramientas & Otros",
+        c4: "Diseño & UX",
+        c5: "Herramientas & Otros",
         aiHead: "Inteligencia Artificial & Automatización",
         aiSub: "Integración de IA para potenciar soluciones",
         ai: [
           ["01", "Integración de IA", "Uso de APIs de IA para automatizar procesos"],
           ["02", "Chatbots", "Desarrollo de asistentes inteligentes"],
-          ["03", "Análisis de Datos", "Procesamiento y análisis con IA"],
-          ["04", "Automatización", "Flujos inteligentes con IA"]
+          ["03", "Automatización", "Flujos inteligentes con IA"]
         ],
         pTitle: "Dominio Tecnológico"
       },
@@ -186,17 +187,18 @@
         plate: "My Skills",
         title: "Tech <span class=accent>stack</span>",
         sub: "Tools and technologies I use to build solutions",
+        ribbon: "Technology stack ribbon",
         c1: "Backend",
         c2: "Frontend",
         c3: "Database",
-        c4: "Tools & Others",
+        c4: "Design & UX",
+        c5: "Tools & Others",
         aiHead: "AI & Automation",
         aiSub: "Leveraging AI to power smarter solutions",
         ai: [
           ["01", "AI Integration", "Using AI APIs to automate workflows"],
           ["02", "Chatbots", "Building intelligent assistants"],
-          ["03", "Data Analysis", "AI-powered insights and processing"],
-          ["04", "Automation", "Smart flows with AI"]
+          ["03", "Automation", "Smart flows with AI"]
         ],
         pTitle: "Proficiency"
       },
@@ -407,10 +409,13 @@
     set("#habilidades .section-header::before", t.skills.plate);
     set("#habilidades .section-title", t.skills.title, true);
     set("#habilidades .section-subtitle", t.skills.sub);
+    const ribbon = document.querySelector(".stack-marquee");
+    if (ribbon) ribbon.setAttribute("aria-label", t.skills.ribbon);
     set("#habilidades .skill-category:nth-of-type(1) .skill-title", t.skills.c1);
     set("#habilidades .skill-category:nth-of-type(2) .skill-title", t.skills.c2);
     set("#habilidades .skill-category:nth-of-type(3) .skill-title", t.skills.c3);
     set("#habilidades .skill-category:nth-of-type(4) .skill-title", t.skills.c4);
+    set("#habilidades .skill-category:nth-of-type(5) .skill-title", t.skills.c5);
     set(".skills-ai .skills-ai-heading .skill-title", t.skills.aiHead);
     set(".skills-ai .skills-ai-meta", `<span class="skills-ai-badge">AI</span><span class="skills-ai-dot"></span><span>${t.skills.aiSub}</span>`, true);
     const ai = document.querySelectorAll(".skills-ai-item");

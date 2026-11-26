@@ -342,6 +342,25 @@
     });
   }
 
+  /* ---------- Cinta de stack: pausa fuera de pantalla ---------- */
+  function initStackMarquee() {
+    var marquee = document.querySelector(".stack-marquee");
+    if (!marquee || reduceMotion || !window.IntersectionObserver) return;
+
+    var inView = false;
+    function sync() {
+      marquee.classList.toggle("is-paused", !inView || document.hidden);
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      inView = entries[0].isIntersecting;
+      sync();
+    }, { rootMargin: "80px 0px" });
+
+    observer.observe(marquee);
+    document.addEventListener("visibilitychange", sync);
+  }
+
   /* ---------- Arranque ---------- */
   function init() {
     initNavbar();
@@ -351,6 +370,7 @@
     initTilt3D();
     initCountUp();
     initScrollReveal();
+    initStackMarquee();
     initScrollProgress();
     initScrollSpy();
     initButtonRipple();
